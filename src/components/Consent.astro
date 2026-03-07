@@ -1,0 +1,12 @@
+<div data-cookie id="cookieBar">
+  <div data-cookie-inner>
+    <p>Folosim cookies pentru a imbunatati experienta. Continuand navigarea, esti de acord cu <a href="/politica-cookies/">politica cookies</a>.</p>
+    <div data-cookie-btns>
+      <button data-cookie-accept onclick="document.getElementById('cookieBar').classList.remove('is-visible');localStorage.setItem('cookies_accepted','1')">Accept</button>
+      <button data-cookie-reject onclick="document.getElementById('cookieBar').classList.remove('is-visible');localStorage.setItem('cookies_accepted','0')">Refuz</button>
+    </div>
+  </div>
+</div>
+<script is:inline>
+if(!localStorage.getItem('cookies_accepted')){document.getElementById('cookieBar').classList.add('is-visible')}
+</script>

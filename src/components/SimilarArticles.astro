@@ -1,0 +1,52 @@
+---
+interface Props {
+  currentSlug: string;
+  category: string;
+  categorySlug: string;
+}
+
+const { currentSlug, category, categorySlug } = Astro.props;
+
+import keywordsData from '../../keywords.json';
+
+function slugify(text: string) {
+  return text.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+const completed = (keywordsData.completed || [])
+  .filter((item: any) => slugify(item.keyword) !== currentSlug)
+  .map((item: any) => ({
+    title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+    slug: slugify(item.keyword),
+    category: item.category,
+    categorySlug: item.categorySlug,
+    image: `/images/articles/${slugify(item.keyword)}.webp`,
+  }));
+
+const sameCategory = completed.filter((a: any) => a.categorySlug === categorySlug);
+const otherCategory = completed.filter((a: any) => a.categorySlug !== categorySlug);
+const similar = [...sameCategory, ...otherCategory].slice(0, 3);
+---
+
+{similar.length > 0 && (
+  <section data-section>
+    <div data-shell>
+      <h2 data-section-title>Articole similare</h2>
+      <div data-grid style="margin-top:20px">
+        {similar.map(a => (
+          <a href={`/${a.slug}/`} data-card>
+            <div data-card-img>
+              <img src={a.image} alt={a.title} width="400" height="225" loading="lazy" decoding="async" />
+            </div>
+            <div data-card-body>
+              <h3 data-card-title>{a.title}</h3>
+            </div>
+            <span data-card-tag>{a.category}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

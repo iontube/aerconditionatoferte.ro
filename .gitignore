@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+.env
+generation.log
+last-category.json
+scripts/temp-articles.json
+scripts/successful-keywords.json

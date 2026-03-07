@@ -1,0 +1,102 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import keywordsData from '../../../keywords.json';
+
+const categories: Record<string, string> = {
+  'oferte-preturi': 'Oferte si Preturi',
+  'comparatii-modele': 'Comparatii Modele',
+  'sfaturi-cumparare': 'Sfaturi Cumparare',
+  'instalare-service': 'Instalare si Service',
+  'review-uri': 'Review-uri',
+};
+
+export function getStaticPaths() {
+  function slugify(text: string) {
+    return text.toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  }
+  const cats = ['oferte-preturi', 'comparatii-modele', 'sfaturi-cumparare', 'instalare-service', 'review-uri'];
+  const completed = (keywordsData.completed || []);
+  const paths: any[] = [];
+  const PER_PAGE = 12;
+
+  for (const cat of cats) {
+    const articles = completed
+      .filter((item: any) => item.categorySlug === cat)
+      .map((item: any) => ({
+        title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+        slug: slugify(item.keyword),
+        excerpt: item.excerpt || '',
+        image: `/images/articles/${slugify(item.keyword)}.webp`,
+        category: item.category,
+        categorySlug: item.categorySlug,
+        date: item.date || new Date().toISOString(),
+      }))
+      .sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+    const totalPages = Math.max(1, Math.ceil(articles.length / PER_PAGE));
+
+    for (let page = 1; page <= totalPages; page++) {
+      const start = (page - 1) * PER_PAGE;
+      paths.push({
+        params: { category: cat, page: page === 1 ? undefined : String(page) },
+        props: {
+          articles: articles.slice(start, start + PER_PAGE),
+          currentPage: page,
+          totalPages,
+          catSlug: cat,
+        },
+      });
+    }
+  }
+  return paths;
+}
+
+const { category } = Astro.params;
+const { articles, currentPage, totalPages, catSlug } = Astro.props;
+const catName = categories[catSlug] || catSlug;
+---
+
+<Layout
+  title={`${catName} Aer Conditionat 2026 — Preturi si Pareri | AerConditionatOferte.ro`}
+  description={`${catName} aer conditionat 2026. Preturi in lei, specificatii tehnice si pareri reale pentru modele Daikin, LG, Samsung, Gree, Mitsubishi.`}
+  canonical={`/${catSlug}/`}
+>
+  <section data-section>
+    <div data-shell>
+      <h1 data-section-title>{catName}</h1>
+      <h2 class="sr-only">Articole {catName}</h2>
+      {articles.length > 0 ? (
+        <div data-grid style="margin-top:24px">
+          {articles.map((a: any) => (
+            <ArticleCard
+              title={a.title}
+              slug={a.slug}
+              excerpt={a.excerpt}
+              image={a.image}
+              category={a.category}
+              categorySlug={a.categorySlug}
+              date={a.date}
+            />
+          ))}
+        </div>
+      ) : (
+        <p style="margin-top:24px;color:var(--c-muted)">Inca nu sunt articole in aceasta categorie. Reveniti curand.</p>
+      )}
+
+      {totalPages > 1 && (
+        <nav data-pagination>
+          {currentPage > 1 && <a href={currentPage === 2 ? `/${catSlug}/` : `/${catSlug}/${currentPage - 1}`}>&larr; Inapoi</a>}
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => (
+            p === currentPage
+              ? <span data-current>{p}</span>
+              : <a href={p === 1 ? `/${catSlug}/` : `/${catSlug}/${p}`}>{p}</a>
+          ))}
+          {currentPage < totalPages && <a href={`/${catSlug}/${currentPage + 1}`}>Inainte &rarr;</a>}
+        </nav>
+      )}
+    </div>
+  </section>
+</Layout>

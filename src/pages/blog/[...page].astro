@@ -1,0 +1,64 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import keywordsData from '../../../keywords.json';
+
+export function getStaticPaths() {
+  function slugify(text: string) {
+    return text.toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  }
+  const PER_PAGE = 12;
+  const completed = (keywordsData.completed || []);
+  const all = completed.map((item: any) => ({
+    title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+    slug: slugify(item.keyword),
+    excerpt: item.excerpt || '',
+    image: `/images/articles/${slugify(item.keyword)}.webp`,
+    category: item.category,
+    categorySlug: item.categorySlug,
+    date: item.date || new Date().toISOString(),
+  })).sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  const totalPages = Math.max(1, Math.ceil(all.length / PER_PAGE));
+  const paths: any[] = [];
+
+  for (let page = 1; page <= totalPages; page++) {
+    const start = (page - 1) * PER_PAGE;
+    paths.push({
+      params: { page: page === 1 ? undefined : String(page) },
+      props: { articles: all.slice(start, start + PER_PAGE), currentPage: page, totalPages },
+    });
+  }
+  return paths;
+}
+
+const { articles, currentPage, totalPages } = Astro.props;
+---
+
+<Layout title="Blog Aer Conditionat — Oferte, Preturi si Pareri 2026 | AerConditionatOferte.ro" description="Articole despre aer conditionat: oferte cu preturi in lei, comparatii intre modele, pareri si specificatii tehnice pentru 2026." canonical="/blog/">
+  <section data-section>
+    <div data-shell>
+      <h1 data-section-title>Toate articolele</h1>
+      {articles.length > 0 ? (
+        <div data-grid style="margin-top:24px">
+          {articles.map((a: any) => (
+            <ArticleCard title={a.title} slug={a.slug} excerpt={a.excerpt} image={a.image} category={a.category} categorySlug={a.categorySlug} date={a.date} />
+          ))}
+        </div>
+      ) : (
+        <p style="margin-top:24px;color:var(--c-muted)">Inca nu sunt articole publicate.</p>
+      )}
+      {totalPages > 1 && (
+        <nav data-pagination>
+          {currentPage > 1 && <a href={currentPage === 2 ? '/blog/' : `/blog/${currentPage - 1}`}>&larr;</a>}
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => (
+            p === currentPage ? <span data-current>{p}</span> : <a href={p === 1 ? '/blog/' : `/blog/${p}`}>{p}</a>
+          ))}
+          {currentPage < totalPages && <a href={`/blog/${currentPage + 1}`}>&rarr;</a>}
+        </nav>
+      )}
+    </div>
+  </section>
+</Layout>

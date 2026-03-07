@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aerconditionatoferte.ro/sitemap_index.xml

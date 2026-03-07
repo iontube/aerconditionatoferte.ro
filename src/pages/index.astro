@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import keywordsData from '../../keywords.json';
+
+const topics = [
+  { name: 'Oferte si Preturi', slug: 'oferte-preturi', color: 'coral', icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>' },
+  { name: 'Comparatii Modele', slug: 'comparatii-modele', color: 'blue', icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="8" height="18" rx="1"/><rect x="14" y="3" width="8" height="18" rx="1"/><path d="M6 8h0M18 8h0M6 12h0M18 12h0"/></svg>' },
+  { name: 'Sfaturi Cumparare', slug: 'sfaturi-cumparare', color: 'gold', icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>' },
+  { name: 'Instalare si Service', slug: 'instalare-service', color: 'navy', icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>' },
+  { name: 'Review-uri', slug: 'review-uri', color: 'green', icon: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>' },
+];
+
+function slugify(text: string) {
+  return text.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+const done = (keywordsData.completed || []).map((item: any) => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: slugify(item.keyword),
+  excerpt: item.excerpt || '',
+  image: `/images/articles/${slugify(item.keyword)}.webp`,
+  category: item.category,
+  categorySlug: item.categorySlug,
+  date: item.date || new Date().toISOString(),
+}));
+
+const recent = [...done]
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .slice(0, 12);
+
+const counts: Record<string, number> = {};
+for (const a of done) counts[a.categorySlug] = (counts[a.categorySlug] || 0) + 1;
+---
+
+<Layout
+  title="Aer Conditionat Oferte 2026 — Preturi de la 1.500 lei | AerConditionatOferte.ro"
+  description="Oferte aer conditionat 2026 cu preturi de la 1.500 lei. Comparam Daikin, Mitsubishi, LG, Samsung, Gree — specificatii, preturi reale si pareri pentru fiecare model."
+>
+  <section data-hero>
+    <div data-shell>
+      <div data-hero-inner>
+        <div data-hero-text>
+          <h1>Oferte <em>aer conditionat</em> cu preturi reale</h1>
+          <p>Preturi, specificatii si pareri pentru aparate de la Daikin, Mitsubishi, LG, Samsung, Gree si Midea. Fara reclame mascate.</p>
+          <div data-hero-badge>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Preturi actualizate 2026
+          </div>
+        </div>
+        <div data-hero-visual>
+          <svg viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="60" r="50" stroke="#FF6B4A" stroke-width="2" opacity=".2"/>
+            <circle cx="60" cy="60" r="35" stroke="#2DA5E0" stroke-width="2" opacity=".3"/>
+            <path d="M40 60h40M60 40v40M45 45l30 30M75 45l-30 30" stroke="#FF6B4A" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="60" cy="60" r="8" fill="#FF6B4A" opacity=".9"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-section>
+    <div data-shell>
+      <h2 data-section-title>Categorii</h2>
+      <div data-cats style="margin-top:20px">
+        {topics.map(t => (
+          <a href={`/${t.slug}/`} data-cat>
+            <div data-cat-icon={t.color} set:html={t.icon} />
+            <div>
+              <div data-cat-name>{t.name}</div>
+              <div data-cat-count>{counts[t.slug] || 0} articole</div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {recent.length > 0 && (
+    <section data-section="alt">
+      <div data-shell>
+        <div data-section-hdr>
+          <h2 data-section-title>Articole recente</h2>
+        </div>
+        <div data-grid>
+          {recent.map((a, i) => (
+            <ArticleCard
+              title={a.title}
+              slug={a.slug}
+              excerpt={a.excerpt}
+              image={a.image}
+              category={a.category}
+              categorySlug={a.categorySlug}
+              date={a.date}
+              spotlight={i === 0}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section data-section>
+    <div data-shell>
+      <div data-about>
+        <h2 data-section-title>Despre noi</h2>
+        <p style="margin-top:16px">Comparam preturi si specificatii pentru aparate de aer conditionat vandute in Romania. Daikin, Mitsubishi, LG, Samsung, Gree, Midea — fiecare model cu avantaje, dezavantaje si pret real.</p>
+        <p>Nu vindem nimic. Punem datele pe masa si tu decizi.</p>
+      </div>
+    </div>
+  </section>
+</Layout>

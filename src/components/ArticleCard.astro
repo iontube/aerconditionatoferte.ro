@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  slug: string;
+  excerpt: string;
+  image: string;
+  category: string;
+  categorySlug: string;
+  date: string;
+  spotlight?: boolean;
+}
+
+const { title, slug, excerpt, image, category, categorySlug, date, spotlight = false } = Astro.props;
+const formattedDate = new Date(date).toLocaleDateString('ro-RO', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+
+<a href={`/${slug}/`} data-card data-spotlight={spotlight || undefined}>
+  <div data-card-img>
+    <img
+      src={image}
+      alt={title}
+      width={spotlight ? "800" : "400"}
+      height={spotlight ? "450" : "225"}
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <div data-card-body>
+    <h3 data-card-title>{title}</h3>
+    <p data-card-excerpt>{excerpt}</p>
+    <div data-card-meta>
+      <time datetime={date}>{formattedDate}</time>
+    </div>
+  </div>
+  <span data-card-tag>{category}</span>
+</a>

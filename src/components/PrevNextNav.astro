@@ -1,0 +1,28 @@
+---
+interface Props { currentSlug: string; }
+const { currentSlug } = Astro.props;
+
+import keywordsData from '../../keywords.json';
+
+function slugify(text: string) {
+  return text.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+const all = (keywordsData.completed || []).map((item: any) => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: slugify(item.keyword),
+}));
+
+const idx = all.findIndex((a: any) => a.slug === currentSlug);
+const prev = idx > 0 ? all[idx - 1] : null;
+const next = idx < all.length - 1 ? all[idx + 1] : null;
+---
+
+{(prev || next) && (
+  <nav style="display:flex;justify-content:space-between;gap:16px;margin-top:36px;padding-top:24px;border-top:1px solid var(--c-border)">
+    {prev ? <a href={`/${prev.slug}/`} style="font-size:.9rem;color:var(--c-accent);font-weight:500">&larr; {prev.title}</a> : <span />}
+    {next ? <a href={`/${next.slug}/`} style="font-size:.9rem;color:var(--c-accent);font-weight:500;text-align:right">{next.title} &rarr;</a> : <span />}
+  </nav>
+)}

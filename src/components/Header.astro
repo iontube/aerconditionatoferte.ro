@@ -1,0 +1,58 @@
+---
+const currentPath = Astro.url.pathname;
+const cats = [
+  { name: 'Oferte', slug: 'oferte-preturi' },
+  { name: 'Comparatii', slug: 'comparatii-modele' },
+  { name: 'Sfaturi Cumparare', slug: 'sfaturi-cumparare' },
+  { name: 'Instalare', slug: 'instalare-service' },
+  { name: 'Review-uri', slug: 'review-uri' },
+];
+---
+
+<header data-hdr>
+  <div data-shell>
+    <div data-hdr-inner>
+      <a href="/" data-logo>
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="#FF6B4A"/>
+          <path d="M10 16h12M16 10v12M11 11l10 10M21 11l-10 10" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="16" cy="16" r="3" fill="#fff"/>
+        </svg>
+        AC <em>Oferte</em>
+      </a>
+      <nav data-nav>
+        {cats.map(c => (
+          <a href={`/${c.slug}/`} aria-current={currentPath.startsWith(`/${c.slug}`) ? 'page' : undefined}>{c.name}</a>
+        ))}
+        <a href="/contact/">Contact</a>
+      </nav>
+      <button data-burger aria-label="Meniu" onclick="document.getElementById('mobileMenu').classList.add('is-open')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div data-mobile-nav id="mobileMenu" onclick="if(event.target===this)this.classList.remove('is-open')">
+  <div data-drawer>
+    <div data-drawer-top>
+      <a href="/" data-logo>
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="#FF6B4A"/>
+          <path d="M10 16h12M16 10v12M11 11l10 10M21 11l-10 10" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="16" cy="16" r="3" fill="#fff"/>
+        </svg>
+        AC <em>Oferte</em>
+      </a>
+      <button data-close aria-label="Inchide" onclick="document.getElementById('mobileMenu').classList.remove('is-open')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav>
+      {cats.map(c => (
+        <a href={`/${c.slug}/`}>{c.name}</a>
+      ))}
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</div>
