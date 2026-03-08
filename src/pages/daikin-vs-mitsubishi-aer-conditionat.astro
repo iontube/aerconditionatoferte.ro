@@ -1,0 +1,470 @@
+---
+export const frontmatter = {
+  title: "Daikin Vs Mitsubishi Aer Conditionat",
+  slug: "daikin-vs-mitsubishi-aer-conditionat",
+  category: "Comparatii Modele",
+  categorySlug: "comparatii-modele",
+  excerpt: "Cautati un aer conditionat Daikin sau Mitsubishi, dar nu stiti pe care sa-l alegeti? Modelele Daikin Sensira Plus ( FTXF35A/RXF35A) cu 12000 BTU si preturi incepand de la 2.799 lei si Mitsubishi Electric MSZ-AY35VGK/MUZ-AY35VG cu 12000 BTU, la preturi de peste 3.400 lei, sunt printre cele mai populare optiuni. Diferenta principala sta in tehnologia compresorului, eficienta energetica pe termen lung si, desigur, pretul.",
+  image: "/images/articles/daikin-vs-mitsubishi-aer-conditionat.webp",
+  publishDate: "2026-03-08T16:28:55.806Z",
+  modifiedDate: "2026-03-08T16:28:55.806Z",
+  author: "Andrei Petrescu"
+};
+
+import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  excerpt: item.excerpt || '',
+  image: `/images/articles/${item.keyword.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}.webp`,
+  date: item.date || new Date().toISOString()
+}));
+---
+
+<Layout
+  title={`${frontmatter.title} | AerConditionatOferte.ro`}
+  description={frontmatter.excerpt}
+  canonical={`/${frontmatter.slug}/`}
+  type="article"
+  image={frontmatter.image}
+  author={frontmatter.author}
+  publishedTime={frontmatter.publishDate}
+  modifiedTime={frontmatter.modifiedDate}
+  faqSchema={{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Cat costa un aer conditionat Daikin vs Mitsubishi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un model Daikin de 12000 BTU incepe de la aproximativ 2.800 lei, in timp ce un model echivalent Mitsubishi Electric, cu tehnologii similare sau superioare, poate depasi 3.400 lei. Pretul variaza mult in functie de serie si functii."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Care e mai eficient energetic, Daikin sau Mitsubishi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ambele branduri ofera modele cu eficienta energetica ridicata, atingand clasele A++ si A+++. Mitsubishi Electric tinde sa aiba modele cu eficienta usor superioara, datorita tehnologiilor de varf, dar diferenta in utilizare zilnica poate fi mica pentru un utilizator mediu."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ce aer conditionat e mai silentios, Daikin sau Mitsubishi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Modelele premium de la ambele branduri ofera niveluri de zgomot foarte scazute. Mitsubishi Electric MSZ-AY35VGK atinge 19 dB(A), un record in industrie, in timp ce Daikin Sensira Plus ofera 21 dB(A). Ambele sunt excelente pentru dormitor."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ce diferenta e intre Daikin si Mitsubishi la fiabilitate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ambele branduri sunt recunoscute pentru fiabilitatea lor. Mitsubishi Electric, in special, are o reputatie excelenta pentru durabilitatea componentelor si performanta constanta pe termen lung. Daikin ofera, de asemenea, produse foarte fiabile, cu o garantie buna."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Care e mai bun pentru incalzire, Daikin sau Mitsubishi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ambele branduri ofera performante bune la incalzire cu modelele lor inverter, folosind refrigerant R32. Mitsubishi Electric, datorita tehnologiilor sale avansate, poate oferi o eficienta usor superioara si in regim de incalzire, mai ales la temperaturi exterioare scazute."
+        }
+      }
+    ]
+  }}
+  breadcrumbs={[
+    { name: "Acasa", url: "/" },
+    { name: "Comparatii Modele", url: "/comparatii-modele/" },
+    { name: "Daikin Vs Mitsubishi Aer Conditionat", url: "/daikin-vs-mitsubishi-aer-conditionat/" }
+  ]}
+>
+  <article>
+    <header data-article-hdr>
+      <div data-shell>
+        <div data-article-hdr-inner>
+          <nav data-breadcrumb>
+            <a href="/">Acasa</a>
+            <span>/</span>
+            <a href={`/${frontmatter.categorySlug}/`}>{frontmatter.category}</a>
+            <span>/</span>
+            <span>{frontmatter.title}</span>
+          </nav>
+          <h1>{frontmatter.title}</h1>
+          <div data-article-meta>
+            <span>{frontmatter.author}</span>
+            <span>&bull;</span>
+            <time datetime={frontmatter.publishDate}>{new Date(frontmatter.publishDate).toLocaleDateString('ro-RO', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div data-shell>
+      <div data-article-body>
+        <div data-content>
+        <img src="/images/articles/daikin-vs-mitsubishi-aer-conditionat.webp" alt="Daikin Vs Mitsubishi Aer Conditionat" data-entry-img width="800" height="600" loading="eager" decoding="async" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;" />
+
+        <div data-toc-mobile id="mobileOutline">
+          <button onclick="document.getElementById('mobileOutline').classList.toggle('is-open')">
+            <span>Cuprins</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul>
+            <li><a href="#daikin-sensira-plus-ftxf35a-rxf35a">Daikin Sensira Plus FTXF35A/RXF35A</a></li>
+            <li><a href="#mitsubishi-electric-msz-ay35vgk-muz-ay35vg">Mitsubishi Electric MSZ-AY35VGK/MUZ-AY35VG</a></li>
+            <li><a href="#lg-dual-cool-dualcool-dual-inverter-vs18be">LG Dual Cool DUALCOOL DUAL INVERTER VS18BE</a></li>
+            <li><a href="#gree-bora-gwh12auc-gwh12auc">Gree Bora GWH12AUC/GWH12AUC</a></li>
+            <li><a href="#mitsubishi-heavy-industries-srk35zs-w-src35zs-w">Mitsubishi Heavy Industries SRK35ZS-W/SRC35ZS-W</a></li>
+            <li><a href="#comparatie">Daikin vs Mitsubishi aer conditionat: Ce alegi?</a></li>
+            <li><a href="#ghid">Cum alegi intre Daikin si Mitsubishi aer conditionat</a></li>
+            <li><a href="#faq">Intrebari frecvente</a></li>
+          </ul>
+        </div>
+
+        <section id="intro">
+          <p>Cautati un aer conditionat Daikin sau Mitsubishi, dar nu stiti pe care sa-l alegeti? Modelele Daikin Sensira Plus ( FTXF35A/RXF35A) cu 12000 BTU si preturi incepand de la 2.799 lei si Mitsubishi Electric MSZ-AY35VGK/MUZ-AY35VG cu 12000 BTU, la preturi de peste 3.400 lei, sunt printre cele mai populare optiuni. Diferenta principala sta in tehnologia compresorului, eficienta energetica pe termen lung si, desigur, pretul.</p><p>Alegerea intre Daikin si Mitsubishi depinde mult de spatiul pe care il aveti de climatizat si de bugetul disponibil. Daikin ofera adesea un echilibru bun intre performanta si pret, fiind potrivit pentru apartamente sau case medii. Mitsubishi tinde sa fie optiunea premium, cu tehnologii de ultima generatie si o fiabilitate recunoscuta, ideala pentru cei care nu fac compromisuri. Luati in calcul si nivelul de zgomot, consumul energetic si functiile suplimentare.</p><p>Acest articol va prezinta caracteristicile cheie ale celor doua branduri, punctele lor forte si slabe, ajutandu-va sa decideti care se potriveste cel mai bine nevoilor dumneavoastra.</p>
+        </section>
+
+          <h2>Daikin Vs Mitsubishi Aer Conditionat</h2>
+          
+          <article id="daikin-sensira-plus-ftxf35a-rxf35a" data-review>
+            <div data-review-bar>
+              <h3>Daikin Sensira Plus FTXF35A/RXF35A</h3>
+              <span data-review-tag>Raport Calitate-Pret</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 21 dB(A) interior / 48 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 770 x 285 x 225 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Daikin Sensira Plus este o alegere populara pentru spatiile rezidentiale medii. Modelele de 12000 BTU sunt gandite pentru incaperi de pana la 25-30 mp, oferind un echilibru intre capacitate si consum. Pretul, in jur de 2.799 lei, il plaseaza intr-o zona accesibila pentru un brand cu renume.</p><p>Ce performante ofera compresorul inverter?</p><p>Compresorul de tip inverter ii permite aparatului sa moduleze puterea in functie de necesarul de racire sau incalzire. Acest lucru se traduce printr-un consum de energie mai mic comparativ cu modelele clasice, on-off. mentine o temperatura mult mai stabila in camera, fara fluctuatii mari, crescand confortul.</p><p>Cat de silentios este in functionare?</p><p>Nivelul de zgomot anuntat de 21 dB(A) pentru unitatea interioara este foarte bun. In practica, acest lucru inseamna ca aparatul este abia perceptibil, ideal pentru dormitoare sau birouri unde linistea este importanta. Unitatea exterioara are un nivel de zgomot de 48 dB(A), standard pentru acest tip de echipament.</p><p>Merita diferenta de pret fata de modelele mai ieftine?</p><p>Da, brandul Daikin vine cu o garantie a fiabilitatii si o eficienta energetica dovedita. refrigerantul R32 este mai ecologic si mai eficient decat R410A. Daca va bazati pe un aparat durabil si cu costuri de operare reduse, Sensira Plus este o investitie buna.</p><p>Ce functii suplimentare gasiti?</p><p>Acest model include functia de dezumidificare, mod turbo pentru racire rapida si un filtru de aer capabil sa retina particulele fine. Unele variante vin cu optiunea de conectivitate Wi-Fi, permitandu-va sa controlati aparatul de la distanta prin intermediul unei aplicatii mobile.</p><p>Pentru ce tip de spatiu este potrivit?</p><p>Daikin Sensira Plus de 12000 BTU este ideal pentru un apartament cu 2-3 camere, un living spatios sau un birou mic spre mediu. Asigura o climatizare eficienta si un consum redus de energie, fiind o optiune echilibrata.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Eficienta energetica buna (A++)</li>
+                  <li>Nivel de zgomot foarte redus (21 dB(A))</li>
+                  <li>Compresor inverter pentru confort si economie</li>
+                  <li>Refrigerant ecologic R32</li>
+                  <li>Pret accesibil pentru un brand premium</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Filtrare aer standard, nu HEPA</li>
+                  <li>Functiile smart (Wi-Fi) pot fi un cost suplimentar</li>
+                  <li>Designul unitatii interioare este functional, nu neaparat deosebit</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="mitsubishi-electric-msz-ay35vgk-muz-ay35vg" data-review>
+            <div data-review-bar>
+              <h3>Mitsubishi Electric MSZ-AY35VGK/MUZ-AY35VG</h3>
+              <span data-review-tag>Premium</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A+++ racire / A++ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 19 dB(A) interior / 49 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 800 x 260 x 200 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Mitsubishi Electric MSZ-AY35VGK reprezinta varful de gama in materie de climatizare rezidentiala. Cu o capacitate de 12000 BTU, acest aparat Poate pentru a oferi performante de neegalat in incaperi de pana la 25-30 mp. Pretul, situat peste 3.400 lei, reflecta tehnologia avansata si calitatea constructiei.</p><p>Cum se diferentiaza compresorul sau fata de alte modele?</p><p>Compresorul Inverter de la Mitsubishi Electric este recunoscut pentru fiabilitatea sa si capacitatea de a mentine temperatura cu o precizie foarte mare. Acest lucru nu doar ca imbunatateste confortul termic, dar contribuie si la o eficienta energetica de top, ajungand la clase energetice A+++.</p><p>Este aparatul cu adevarat silentios?</p><p>Cu un nivel de zgomot anuntat de doar 19 dB(A) pentru unitatea interioara, acest model este unul dintre cele mai silentioase de pe piata. In mod practic, functionarea sa este aproape imperceptibila, fiind perfect pentru dormitoare sau spatii unde se lucreaza. Unitatea exterioara mentine un nivel de zgomot decent, sub 50 dB(A).</p><p>Merita investitia mai mare?</p><p>Daca puneti accent pe cea mai buna eficienta energetica, fiabilitate pe termen lung si un confort termic de neegalat, raspunsul este da. Mitsubishi Electric este un brand care isi justifica pretul prin longevitate si performante constante, chiar si in conditii extreme.</p><p>Ce tehnologii specifice are?</p><p>Modelul are tehnologia avansata de purificare a aerului Plasma Quad Plus, care elimina virusii, bacteriile, mucegaiul si alergenii. Senzorul 'Melco' de miscare detecteaza prezenta persoanelor in camera si ajusteaza fluxul de aer pentru a evita directia spre ocupanti, crescand confortul.</p><p>Pentru cine este recomandat acest aparat?</p><p>Acest model se potriveste persoanelor care cauta cea mai buna performanta si eficienta, fara a face compromisuri. Este ideal pentru dormitoare, camere de copii, sau oricare spatiu unde calitatea aerului si confortul termic sunt prioritare. Investitia se amortizeaza prin economia de energie si fiabilitatea pe termen lung.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Clasa energetica de top (A+++ racire)</li>
+                  <li>Nivel de zgomot extrem de redus (19 dB(A))</li>
+                  <li>Sistem avansat de purificare a aerului (Plasma Quad Plus)</li>
+                  <li>Fiabilitate si durabilitate recunoscute</li>
+                  <li>Control precis al temperaturii</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Pret de achizitie ridicat</li>
+                  <li>Designul unitatii interioare poate fi considerat sobru</li>
+                  <li>Functiile avansate de purificare pot creste consumul marginal</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="lg-dual-cool-dualcool-dual-inverter-vs18be" data-review>
+            <div data-review-bar>
+              <h3>LG Dual Cool DUALCOOL DUAL INVERTER VS18BE</h3>
+              <span data-review-tag>Alegerea Noastra</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 18000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 19 dB(A) interior / 49 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Dual Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 835 x 295 x 189 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>LG Dual Cool DUAL INVERTER VS18BE, cu o capacitate de 18000 BTU, este o solutie puternica pentru spatii mai mari, cum ar fi livinguri generoase sau apartamente cu 3 camere, acoperind suprafete de pana la 35-40 mp. Pretul sau, in jur de 3.100 lei, il pozitioneaza ca o optiune mid-range spre premium, oferind tehnologie avansata.</p><p>Ce inseamna tehnologia Dual Inverter?</p><p>Compresorul Dual Inverter de la LG ii permite aparatului sa ajunga rapid la temperatura dorita si sa mentina un nivel constant, cu un consum energetic redus. Aceasta tehnologie reduce fluctuatiile de temperatura si zgomotul, oferind un confort sporit si economii la factura de electricitate.</p><p>Cat de eficient este in utilizare zilnica?</p><p>Clasa energetica A++ la racire si A+ la incalzire indica o eficienta buna. Aparatul poate optimizeze consumul, mai ales in modurile de functionare prelungite. Zgomotul de 19 dB(A) pentru unitatea interioara este excelent, facandu-l potrivit pentru orice camera.</p><p>Merita sa optez pentru un model de 18000 BTU?</p><p>Daca spatiul dumneavoastra depaseste 30 mp sau daca preferati ca aparatul sa functioneze la o capacitate mai mica, optimizand astfel consumul si reducand uzura, un model de 18000 BTU este o alegere inspirata. Acesta va asigura o racire rapida si eficienta chiar si in zilele caniculare.</p><p>Ce functii inteligente ofera?</p><p>Acest model are Wi-Fi integrat, permitandu-va sa il controlati de oriunde prin aplicatia LG ThinQ. Functia de auto-curatare previne formarea bacteriilor si mucegaiului pe unitatea interioara, mentinand un aer mai curat. Fluxul de aer directionat in mai multe puncte asigura o distributie uniforma.</p><p>Pentru cine este destinat?</p><p>LG Dual Cool VS18BE este o alegere potrivita pentru familiile care cauta un aparat performant, eficient energetic si cu functii smart. Este ideal pentru livinguri, zone de zi open-space sau apartamente mai mari, unde este necesara o putere de climatizare superioara.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Control Wi-Fi integrat prin aplicatia LG ThinQ</li>
+                  <li>Compresor Dual Inverter pentru eficienta si zgomot redus</li>
+                  <li>Functie de auto-curatare</li>
+                  <li>Capacitate mare (18000 BTU) pentru spatii extinse</li>
+                  <li>Design modern si compact</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Pretul poate fi considerat ridicat pentru unii cumparatori</li>
+                  <li>Clasa energetica la incalzire (A+) este buna, dar nu de top</li>
+                  <li>Instalarea poate necesita un specialist cu experienta</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="gree-bora-gwh12auc-gwh12auc" data-review>
+            <div data-review-bar>
+              <h3>Gree Bora GWH12AUC/GWH12AUC</h3>
+              <span data-review-tag>Pentru Buget Mic</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 24 dB(A) interior / 52 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 708 x 265 x 195 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Gree Bora GWH12AUC, cu 12000 BTU, este o optiune accesibila pentru cei care cauta un aparat de aer conditionat cu inverter, fara a depasi un buget restrans. Pretul, situat in jur de 2.100 lei, il face atractiv pentru apartamente sau camere de dimensiuni medii (pana la 25 mp).</p><p>Cum se descurca in utilizarea zilnica?</p><p>Compresorul inverter asigura un consum redus de energie comparativ cu modelele non-inverter. Clasa energetica A++ la racire si A+ la incalzire sunt decente pentru segmentul de pret. Aparatul ofera o functionare stabila si confort termic.</p><p>Este suficient de silentios pentru dormitor?</p><p>Nivelul de zgomot de 24 dB(A) pentru unitatea interioara este acceptabil, dar nu cel mai mic de pe piata. Pentru un dormitor, poate fi usor sesizabil in timpul noptii, insa in majoritatea situatiilor nu ar trebui sa deranjeze semnificativ. Unitatea exterioara are 52 dB(A).</p><p>Merita sa ma orientez spre Gree Bora?</p><p>Daca prioritatea dumneavoastra este un pret mic pentru un aparat cu tehnologie inverter si capacitatea necesara pentru o camera standard, Gree Bora este o varianta. Brandul Gree este unul dintre cei mai mari producatori de AC-uri la nivel mondial, oferind produse cu un bun raport calitate-pret.</p><p>Ce functionalitati are?</p><p>Modelul are functii de baza precum racire, incalzire, dezumidificare si ventilatie. Include si moduri precum Turbo pentru climatizare rapida si Sleep pentru o functionare mai confortabila pe timpul noptii. Nu are functii smart avansate.</p><p>Pentru cine este potrivit acest model?</p><p>Gree Bora este recomandat pentru cei cu un buget limitat, care doresc un aparat de aer conditionat cu inverter pentru o camera de zi, un dormitor sau un birou de dimensiuni mici spre medii. Este o solutie functionala si economica.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Pret foarte accesibil</li>
+                  <li>Compresor inverter pentru economie de energie</li>
+                  <li>Capacitate potrivita pentru camere standard</li>
+                  <li>Refrigerant R32 ecologic</li>
+                  <li>Raport calitate-pret bun</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Nivel de zgomot al unitatii interioare usor mai ridicat (24 dB(A))</li>
+                  <li>Functii de baza, lipsesc optiunile smart</li>
+                  <li>Designul este simplu, functional</li>
+                  <li>Clasa energetica la incalzire (A+) nu este de top</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="mitsubishi-heavy-industries-srk35zs-w-src35zs-w" data-review>
+            <div data-review-bar>
+              <h3>Mitsubishi Heavy Industries SRK35ZS-W/SRC35ZS-W</h3>
+              <span data-review-tag>Performanta Top</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 22 dB(A) interior / 50 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 760 x 269 x 209 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Mitsubishi Heavy Industries SRK35ZS-W, cu 12000 BTU, este o optiune premium pentru cei care cauta performanta si fiabilitate. Cu un pret in jur de 3.200 lei, acest aparat este destinat spatiilor de pana la 25-30 mp, oferind o climatizare de inalta calitate.</p><p>Ce diferentiaza acest model MHI de alte aparate?</p><p>Mitsubishi Heavy Industries este un brand cu o traditie solida in productia de sisteme de climatizare performante. Acest model are un compresor inverter eficient, care asigura atat racire, cat si incalzire, cu un consum optimizat. Clasa energetica A++ la racire este standardul pentru performanta in acest segment.</p><p>Cat de eficient este pe termen lung?</p><p>Fiabilitatea este un atu major al brandurilor Mitsubishi. Aceste aparate sunt construite pentru a rezista, iar tehnologia inverter ajuta la reducerea uzurii si la mentinerea performantei in timp. Investitia initiala mai mare se poate reflecta in costuri de intretinere mai mici si o durata de viata extinsa.</p><p>Este o optiune silentioasa pentru uz casnic?</p><p>Nivelul de zgomot de 22 dB(A) pentru unitatea interioara este bun, asigurand un confort auditiv acceptabil. Desi nu este cel mai silentios model de pe piata, este suficient de discret pentru majoritatea utilizatorilor, inclusiv pentru dormitoare.</p><p>Ce tehnologii de climatizare avansate include?</p><p>Acest model poate include functii precum controlul fluxului de aer, moduri de economisire a energiei si un sistem de filtrare a aerului. Pentru modelele mai noi, se poate adauga si optiunea de conectivitate Wi-Fi, oferind control de la distanta.</p><p>Pentru cine este cel mai potrivit?</p><p>Mitsubishi Heavy Industries SRK35ZS-W este ideal pentru utilizatorii care acorda prioritate fiabilitatii, performantei constante si unei durate de viata lungi. Se potriveste bine in apartamente sau case unde se doreste o climatizare eficienta si de incredere.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Fiabilitate si durabilitate recunoscute</li>
+                  <li>Performanta constanta in racire si incalzire</li>
+                  <li>Compresor inverter eficient</li>
+                  <li>Refrigerant R32</li>
+                  <li>Brand cu reputatie solida</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Pret de achizitie premium</li>
+                  <li>Nivel de zgomot usor peste cele mai silentioase modele</li>
+                  <li>Functiile smart pot fi un cost suplimentar sau indisponibile pe anumite sub-modele</li>
+                  <li>Designul este functional, nu neaparat spectaculos</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          
+          <section id="comparatie">
+            <h2>Daikin vs Mitsubishi aer conditionat: Ce alegi?</h2>
+            <div data-comparison>
+              <table>
+                <thead><tr><th>Model</th><th>Capacitate</th><th>Clasa energetica</th><th>Zgomot</th><th>Pret</th><th>Potrivit pentru</th></tr></thead>
+                <tbody>
+              <tr><td>Daikin Sensira Plus FTXF35A</td><td>12000 BTU</td><td>A++ / A+</td><td>21 dB(A)</td><td>~2.799 lei</td><td>Apartamente, camere medii</td></tr>
+              <tr><td>Mitsubishi Electric MSZ-AY35VGK</td><td>12000 BTU</td><td>A+++ / A++</td><td>19 dB(A)</td><td>~3.400 lei</td><td>Spatii unde confortul si eficienta maxima sunt prioritare</td></tr>
+              <tr><td>LG Dual Cool VS18BE</td><td>18000 BTU</td><td>A++ / A+</td><td>19 dB(A)</td><td>~3.100 lei</td><td>Livinguri mari, apartamente 3 camere</td></tr>
+              <tr><td>Gree Bora GWH12AUC</td><td>12000 BTU</td><td>A++ / A+</td><td>24 dB(A)</td><td>~2.100 lei</td><td>Bugete limitate, camere standard</td></tr>
+              <tr><td>Mitsubishi Heavy SRK35ZS-W</td><td>12000 BTU</td><td>A++ / A+</td><td>22 dB(A)</td><td>~3.200 lei</td><td>Utilizatori ce cauta fiabilitate si performanta pe termen lung</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          
+          <section id="ghid">
+            <h2>Cum alegi intre Daikin si Mitsubishi aer conditionat</h2>
+            <div data-guide>
+              <p>Alegerea unui aer conditionat Daikin sau Mitsubishi se reduce la prioritatile dumneavoastra. Ambele branduri sunt cunoscute pentru calitate, dar au abordari diferite.</p><h4>Daikin: Echilibru si accesibilitate</h4><p>Daikin se concentreaza pe oferirea unui pachet complet, unde performanta intalneste un pret competitiv. Modelele lor, precum Sensira Plus, sunt gandite pentru a satisface nevoile majoritatii utilizatorilor casnici. Veti gasi aparate cu tehnologie inverter, eficiente energetic si cu un nivel de zgomot redus, la preturi care nu afecteaza drastic bugetul. Sunt alegeri sigure pentru apartamente si case medii.</p><h4>Mitsubishi Electric: Premium si tehnologie de varf</h4><p>Mitsubishi Electric se pozitioneaza in segmentul premium. Aparatele lor, cum ar fi seria MSZ-AY, integreaza cele mai noi tehnologii, oferind eficienta energetica de top (adesea A+++), un nivel de zgomot minim si functii avansate de purificare a aerului. Aceste modele sunt pentru cei care cauta cele mai bune performante si sunt dispusi sa plateasca un pret pe masura. Fiabilitatea pe termen lung este un atu major.</p><h4>Ce criterii sa aveti in vedere?</h4><ul><li><strong>Capacitatea (BTU):</strong> Corelata cu suprafata incaperii. Pentru o camera de 12-15 mp, 9000 BTU sunt suficienti. Pentru 20-25 mp, 12000 BTU. Pentru livinguri mari sau spatii deschise, 18000 BTU sau mai mult. Un aparat subdimensionat va functiona continuu, consumand mult, iar unul supradimensionat va porni/opri des, afectand confortul.</li><li><strong>Clasa Energetica:</strong> Cat mai ridicata (A+++, A++). Aceasta indica eficienta aparatului si inseamna facturi mai mici la electricitate, mai ales in utilizare prelungita.</li><li><strong>Nivel de Zgomot:</strong> Pentru dormitoare sau birouri, cautati modele sub 25 dB(A) pentru unitatea interioara.</li><li><strong>Tipul Compresorului:</strong> Inverter este standardul modern. Asigura economie de energie, stabilitate termica si functionare mai silentioasa.</li><li><strong>Refrigerant:</strong> R32 este noul standard, mai ecologic si mai eficient decat R410A.</li><li><strong>Functii Suplimentare:</strong> Wi-Fi, purificare aer, auto-curatare, moduri economice. Evaluati daca aceste functii sunt necesare pentru dumneavoastra.</li></ul><p>Alegerea intre Daikin si Mitsubishi depinde de buget, de cat de mult puneti pret pe tehnologia de ultima generatie si de durata de viata pe care o asteptati. Pentru un echilibru bun, Daikin este adesea alegerea potrivita. Pentru performanta maxima si fiabilitate de necontestat, Mitsubishi Electric este greu de egalat.</p>
+            </div>
+          </section>
+
+          <div data-faq>
+            <h2>Intrebari frecvente</h2>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Cat costa un aer conditionat Daikin vs Mitsubishi?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Un model Daikin de 12000 BTU incepe de la aproximativ 2.800 lei, in timp ce un model echivalent Mitsubishi Electric, cu tehnologii similare sau superioare, poate depasi 3.400 lei. Pretul variaza mult in functie de serie si functii.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Care e mai eficient energetic, Daikin sau Mitsubishi?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Ambele branduri ofera modele cu eficienta energetica ridicata, atingand clasele A++ si A+++. Mitsubishi Electric tinde sa aiba modele cu eficienta usor superioara, datorita tehnologiilor de varf, dar diferenta in utilizare zilnica poate fi mica pentru un utilizator mediu.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Ce aer conditionat e mai silentios, Daikin sau Mitsubishi?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Modelele premium de la ambele branduri ofera niveluri de zgomot foarte scazute. Mitsubishi Electric MSZ-AY35VGK atinge 19 dB(A), un record in industrie, in timp ce Daikin Sensira Plus ofera 21 dB(A). Ambele sunt excelente pentru dormitor.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Ce diferenta e intre Daikin si Mitsubishi la fiabilitate?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Ambele branduri sunt recunoscute pentru fiabilitatea lor. Mitsubishi Electric, in special, are o reputatie excelenta pentru durabilitatea componentelor si performanta constanta pe termen lung. Daikin ofera, de asemenea, produse foarte fiabile, cu o garantie buna.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Care e mai bun pentru incalzire, Daikin sau Mitsubishi?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Ambele branduri ofera performante bune la incalzire cu modelele lor inverter, folosind refrigerant R32. Mitsubishi Electric, datorita tehnologiilor sale avansate, poate oferi o eficienta usor superioara si in regim de incalzire, mai ales la temperaturi exterioare scazute.
+                </div>
+              </div>
+          </div>
+
+          <PrevNextNav currentSlug="daikin-vs-mitsubishi-aer-conditionat" />
+
+        </div>
+      </div>
+    </div>
+
+    <SimilarArticles
+      currentSlug="daikin-vs-mitsubishi-aer-conditionat"
+      category="Comparatii Modele"
+      categorySlug="comparatii-modele"
+    />
+  </article>
+
+  <script>
+    // Table scroll detection
+    (function() {
+      const outer = document.querySelector('[data-table-wrap]');
+      if (!outer) return;
+      const scroll = outer.querySelector('[data-table-scroll]');
+      function check() {
+        if (scroll.scrollWidth > scroll.clientWidth) {
+          outer.classList.add('can-scroll');
+        } else {
+          outer.classList.remove('can-scroll');
+        }
+        if (scroll.scrollLeft + scroll.clientWidth >= scroll.scrollWidth - 2) {
+          outer.classList.remove('can-scroll');
+        }
+      }
+      check();
+      scroll.addEventListener('scroll', check);
+      window.addEventListener('resize', check);
+    })();
+
+    // Outline tracking
+    (function() {
+      const links = document.querySelectorAll('#sideOutline a, #mobileOutline a');
+      const secs = [];
+      links.forEach(link => {
+        const id = link.getAttribute('href')?.replace('#', '');
+        const el = id && document.getElementById(id);
+        if (el) secs.push({ el, link });
+      });
+      if (!secs.length) return;
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const m = secs.find(s => s.el === entry.target);
+          if (m && entry.isIntersecting) {
+            links.forEach(l => l.parentElement?.classList.remove('is-active'));
+            m.link.parentElement?.classList.add('is-active');
+            links.forEach(l => {
+              if (l !== m.link && l.getAttribute('href') === m.link.getAttribute('href')) {
+                l.parentElement?.classList.add('is-active');
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-72px 0px -60% 0px' });
+      secs.forEach(s => obs.observe(s.el));
+    })();
+  </script>
+</Layout>
