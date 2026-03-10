@@ -1,0 +1,469 @@
+---
+export const frontmatter = {
+  title: "Samsung Vs Lg Aer Conditionat 2026",
+  slug: "samsung-vs-lg-aer-conditionat-2026",
+  category: "Comparatii Modele",
+  categorySlug: "comparatii-modele",
+  excerpt: "Cautati un aer conditionat Samsung sau LG pentru 2026? Un model Samsung WindFree 12000 BTU poate fi gasit la preturi incepand de la 3.200 lei, in timp ce un LG Dual Inverter Voice 12000 BTU porneste de la 3.000 lei. Ambele ofera performante similare pentru apartamente de 2-3 camere.",
+  image: "/images/articles/samsung-vs-lg-aer-conditionat-2026.webp",
+  publishDate: "2026-03-10T17:01:27.694Z",
+  modifiedDate: "2026-03-10T17:01:27.694Z",
+  author: "Elena Voicu"
+};
+
+import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  excerpt: item.excerpt || '',
+  image: `/images/articles/${item.keyword.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}.webp`,
+  date: item.date || new Date().toISOString()
+}));
+---
+
+<Layout
+  title={`${frontmatter.title} | AerConditionatOferte.ro`}
+  description={frontmatter.excerpt}
+  canonical={`/${frontmatter.slug}/`}
+  type="article"
+  image={frontmatter.image}
+  author={frontmatter.author}
+  publishedTime={frontmatter.publishDate}
+  modifiedTime={frontmatter.modifiedDate}
+  faqSchema={{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Ce diferenta e intre Samsung si LG aer conditionat 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Samsung exceleaza adesea in tehnologii precum WindFree (fara curenti de aer) si functii smart integrate. LG se distinge prin compresorul Dual Inverter, eficienta energetica sporita si optiuni de control vocal. Ambele ofera modele de 12000 BTU in jur de 3000-3200 lei."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cat consuma un aer conditionat Samsung sau LG de 12000 BTU pe luna?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un aparat inverter de 12000 BTU, folosit 8 ore pe zi la o temperatura medie (ex: 24°C), poate consuma intre 80 si 150 kWh pe luna. Consumul real depinde de clasa energetica (A++ sau A+++), izolatia locuintei si temperatura exterioara."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ce aparat de aer conditionat sa aleg pentru un apartament de 2 camere?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pentru un apartament de 2 camere (aprox. 40-50 mp total), sunt recomandate doua unitati: una de 9000 BTU pentru dormitor/birou si una de 12000 BTU pentru living. Daca bugetul permite, opteaza pentru modele cu clasa energetica A++ sau A+++."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Este bun Gree Bora Plus 12000 BTU ca raport calitate-pret?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Da, Gree Bora Plus 12000 BTU este o optiune buna pentru bugete mici, oferind tehnologie inverter la un pret accesibil (aprox. 2200 lei). Performanta si nivelul de zgomot sunt decente pentru pretul sau, dar nu se compara cu modelele premium de la Samsung sau LG."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ce probleme pot aparea la un aer conditionat Samsung sau LG?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cele mai comune probleme includ pierderi de agent frigorific (necesita verificare de catre un tehnician), blocarea filtrelor (necesita curatare regulata), defectiuni ale telecomenzii sau ale unitatii electronice. O intretinere periodica reduce riscul acestor probleme."
+        }
+      }
+    ]
+  }}
+  breadcrumbs={[
+    { name: "Acasa", url: "/" },
+    { name: "Comparatii Modele", url: "/comparatii-modele/" },
+    { name: "Samsung Vs Lg Aer Conditionat 2026", url: "/samsung-vs-lg-aer-conditionat-2026/" }
+  ]}
+>
+  <article>
+    <header data-article-hdr>
+      <div data-shell>
+        <div data-article-hdr-inner>
+          <nav data-breadcrumb>
+            <a href="/">Acasa</a>
+            <span>/</span>
+            <a href={`/${frontmatter.categorySlug}/`}>{frontmatter.category}</a>
+            <span>/</span>
+            <span>{frontmatter.title}</span>
+          </nav>
+          <h1>{frontmatter.title}</h1>
+          <div data-article-meta>
+            <span>{frontmatter.author}</span>
+            <span>&bull;</span>
+            <time datetime={frontmatter.publishDate}>{new Date(frontmatter.publishDate).toLocaleDateString('ro-RO', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div data-shell>
+      <div data-article-body>
+        <div data-content>
+        <img src="/images/articles/samsung-vs-lg-aer-conditionat-2026.webp" alt="Samsung Vs Lg Aer Conditionat 2026" data-entry-img width="800" height="600" loading="eager" decoding="async" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;" />
+
+        <div data-toc-mobile id="mobileOutline">
+          <button onclick="document.getElementById('mobileOutline').classList.toggle('is-open')">
+            <span>Cuprins</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul>
+            <li><a href="#samsung-windfree-comfort-2-0-12000-btu">Samsung WindFree Comfort 2.0 12000 BTU</a></li>
+            <li><a href="#lg-dual-inverter-voice-p12rhp-12000-btu">LG Dual Inverter Voice P12RHP 12000 BTU</a></li>
+            <li><a href="#gree-bora-plus-12000-btu-gwh12acbx">Gree Bora Plus 12000 BTU GWH12ACBX</a></li>
+            <li><a href="#mitsubishi-electric-msz-ay25vgk-muz-ay25vg-9000-btu">Mitsubishi Electric MSZ-AY25VGK/MUZ-AY25VG 9000 BTU</a></li>
+            <li><a href="#samsung-ar12tssdawkneu-12000-btu">Samsung AR12TSSDAWKNEU 12000 BTU</a></li>
+            <li><a href="#comparatie">Samsung vs LG Aer Conditionat 2026: Modele Populare</a></li>
+            <li><a href="#ghid">Cum alegi intre Samsung si LG aer conditionat 2026</a></li>
+            <li><a href="#faq">Intrebari frecvente</a></li>
+          </ul>
+        </div>
+
+        <section id="intro">
+          <p>Cautati un aer conditionat Samsung sau LG pentru 2026? Un model Samsung WindFree 12000 BTU poate fi gasit la preturi incepand de la 3.200 lei, in timp ce un LG Dual Inverter Voice 12000 BTU porneste de la 3.000 lei. Ambele ofera performante similare pentru apartamente de 2-3 camere.</p><p>Alegerea intre Samsung si LG depinde de specificul locuintei, bugetul disponibil si functiile pe care le prioritizati. Un model cu capacitate mare, de 18000 BTU, este necesar pentru spatii deschise sau livinguri generoase, unde un aparat de 12000 BTU nu ar face fata. Luati in calcul si nivelul de zgomot, clasa energetica si functiile smart.</p><p>In acest articol, analizam modele specifice de la Samsung si LG, comparam performantele lor si va ghidam spre cea mai buna achizitie pentru nevoile dumneavoastra.</p>
+        </section>
+
+          <h2>Samsung Vs Lg Aer Conditionat 2026</h2>
+          
+          <article id="samsung-windfree-comfort-2-0-12000-btu" data-review>
+            <div data-review-bar>
+              <h3>Samsung WindFree Comfort 2.0 12000 BTU</h3>
+              <span data-review-tag>Alegerea Noastra</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 20 dB(A) interior / 50 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Digital Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 859 x 299 x 215 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Modelul Samsung WindFree Comfort 2.0 e pentru cei care cauta un echilibru intre confort, eficienta si tehnologie. Sistemul WindFree promite o climatizare uniforma, fara curenti de aer directi, distribuind aerul rece prin mii de micro-gauri.</p><p>Ce performante ofera compresorul Digital Inverter? Acesta ajusteaza continuu temperatura, mentinand-o constanta si reducand fluctuatiile, ceea ce inseamna economie la factura de curent si o durata de viata mai lunga a aparatului. Poti astepta un consum redus, in special in regim de mentinere a temperaturii.</p><p>Cat de silentios este in functionare? Nivelul de zgomot de 20 dB(A) pentru unitatea interioara este printre cele mai scazute de pe piata. Acest lucru il face ideal pentru dormitoare sau camere unde linistea conteaza. Vei observa ca abia se aude, chiar si la putere maxima.</p><p>Merita diferenta de pret fata de modelele mai ieftine? Tehnologia WindFree, functia de racire rapida (Fast Cooling) si modul 'Good Sleep' sunt avantaje clare. conectivitatea Wi-Fi integrata permite controlul de la distanta prin aplicatia SmartThings.</p><p>Ce filtrare ofera? Sistemul include un filtru Easy Filter Plus, pozitionat in partea superioara, usor accesibil pentru curatare. Acesta capteaza praful, fibrele si alte particule, contribuind la un aer mai curat in locuinta.</p><p>Este usor de utilizat? Daca ai nevoie de un aparat pe care sa il controlezi din mers, aplicatia mobila iti permite sa setezi temperatura, sa programezi functionarea sau sa monitorizezi consumul. Telecomanda, este intuitiva.</p><p>Pentru cine este potrivit acest model? Samsung WindFree Comfort 2.0 12000 BTU este o alegere buna pentru dormitoare, camere de copii sau livinguri de dimensiuni medii (pana la 25-30 mp), unde confortul termic fara curenti de aer este prioritar. Este pentru utilizatorii care apreciaza tehnologia smart si un nivel de zgomot minim.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Tehnologie WindFree pentru confort sporit, fara curenti de aer</li>
+                  <li>Nivel de zgomot foarte scazut (20 dB(A))</li>
+                  <li>Control prin Wi-Fi si aplicatie mobila SmartThings</li>
+                  <li>Compresor Digital Inverter eficient energetic</li>
+                  <li>Functii multiple pentru confort si economie (Good Sleep, Fast Cooling)</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Pretul poate fi mai ridicat comparativ cu modele non-WindFree</li>
+                  <li>Filtrul de baza ar putea fi completat cu filtre suplimentare pentru aer fin</li>
+                  <li>Instalarea necesita un specialist autorizat</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="lg-dual-inverter-voice-p12rhp-12000-btu" data-review>
+            <div data-review-bar>
+              <h3>LG Dual Inverter Voice P12RHP 12000 BTU</h3>
+              <span data-review-tag>Raport Calitate-Pret</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 21 dB(A) interior / 52 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Dual Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 835 x 305 x 196 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>LG Dual Inverter Voice P12RHP este un model de 12000 BTU care se concentreaza pe eficienta energetica si performanta, adaugand si control vocal pentru un plus de comoditate. Compresorul sau Dual Inverter promite o functionare rapida si o economie semnificativa.</p><p>Ce face ca acest compresor Dual Inverter sa fie special? Spre deosebire de compresoarele conventionale, cel dual inverter are doua capete de rotor, ceea ce permite o functionare mai stabila, mai rapida si mai silentioasa. Vei observa ca aparatul atinge rapid temperatura dorita si o mentine cu un consum minim.</p><p>Cat de eficient este din punct de vedere energetic? LG anunta o economie de energie de pana la 70% fata de modelele conventionale. Acest lucru se traduce direct in facturi mai mici la electricitate, o componenta importanta in calculul costului total de utilizare.</p><p>Este controlul vocal o functie utila? Daca ai un asistent vocal compatibil (Google Assistant, Amazon Alexa), poti controla aparatul fara a te misca din fotoliu. Poti porni, opri, regla temperatura sau schimba modul de functionare doar rostind comenzi vocale.</p><p>Cum se compara nivelul de zgomot cu alte modele? Cu 21 dB(A) pentru unitatea interioara, este foarte silentios, desi cu 1 dB(A) peste modelul Samsung WindFree. Totusi, ramane o varianta buna pentru dormitoare sau birouri unde linistea este importanta. Vei putea dormi fara probleme.</p><p>Ce alte functii aduce? Aparatul are functia 'Smart Diagnosis' pentru detectarea rapida a problemelor, un filtru dublu pentru captarea particulelor fine si un mod 'Auto Cleaning' care previne formarea bacteriilor si mucegaiului in unitatea interioara.</p><p>Pentru cine este potrivit acest model? LG Dual Inverter Voice P12RHP 12000 BTU este ideal pentru camere de zi, dormitoare sau birouri de dimensiuni medii (pana la 25-30 mp). Este pentru utilizatorii care cauta un echilibru intre performanta, eficienta energetica, functii smart (inclusiv control vocal) si un pret competitiv.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Compresor Dual Inverter pentru racire/incalzire rapida si economie de energie</li>
+                  <li>Control vocal prin compatibilitate cu asistentii smart</li>
+                  <li>Nivel de zgomot redus (21 dB(A))</li>
+                  <li>Functie Auto Cleaning pentru mentinerea igienei interioare</li>
+                  <li>Pret competitiv pentru clasa sa de performanta</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Filtrarea de baza ar putea fi insuficienta pentru persoanele cu alergii severe</li>
+                  <li>Necesita o conexiune Wi-Fi stabila pentru functiile smart</li>
+                  <li>Telecomanda are un design standard, fara functii avansate</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="gree-bora-plus-12000-btu-gwh12acbx" data-review>
+            <div data-review-bar>
+              <h3>Gree Bora Plus 12000 BTU GWH12ACBX</h3>
+              <span data-review-tag>Pentru Buget Mic</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 24 dB(A) interior / 54 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 790 x 275 x 200 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Gree Bora Plus 12000 BTU se inscrie in segmentul de buget, oferind o solutie de climatizare eficienta pentru spatii mici si medii. Este un model cu compresor inverter, care promite un consum decent de energie.</p><p>Ce ofera acest compresor inverter? Spre deosebire de sistemele clasice on-off, compresorul inverter ajusteaza viteza in functie de necesarul de racire sau incalzire. Asta inseamna ca atinge mai repede temperatura dorita si o mentine constant, cu un consum mai mic de energie comparativ cu un aparat non-inverter.</p><p>Este suficient de silentios pentru un dormitor? Cu un nivel de zgomot de 24 dB(A) in modul silentios, se situeaza la limita inferioara a confortului acustic. Pentru unii utilizatori poate fi tolerabil, pentru altii, mai sensibili la zgomot, poate fi deranjant in timpul somnului.</p><p>Cum se descurca in conditii de temperaturi extreme? Gree Bora Plus poate functioneze eficient pe o plaja larga de temperaturi, dar performanta maxima, in special la incalzire pe timp de iarna, poate fi inferioara modelelor premium. Totusi, pentru utilizare ocazionala in sezonul rece, este o varianta.</p><p>Ce functii de baza ofera? Pe langa modurile standard de racire, incalzire, ventilare si dezumidificare, are un mod 'Turbo' pentru atingerea rapida a temperaturii si un mod 'Sleep' pentru confort optimizat pe timpul noptii. Functia de auto-restart este, prezenta.</p><p>Merita sa il cumperi avand in vedere pretul? Daca bugetul este principalul tau criteriu, Gree Bora Plus ofera o valoare buna. Poti obtine un aparat inverter, cu o capacitate potrivita pentru un apartament, la un pret accesibil. Este o solutie functionala fara multe artificii.</p><p>Pentru cine este potrivit acest model? Gree Bora Plus 12000 BTU este recomandat pentru garsoniere, dormitoare sau camere de zi de dimensiuni mici spre medii (pana la 20-25 mp), unde un aparat de aer conditionat cu functii de baza si un pret accesibil este necesar. Este pentru utilizatorii care nu au nevoie de functii smart sau de niveluri de zgomot extrem de scazute.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Pret accesibil, ideal pentru bugete restranse</li>
+                  <li>Compresor Inverter pentru eficienta energetica decenta</li>
+                  <li>Design compact si simplu</li>
+                  <li>Functii de baza esentiale acoperite (Turbo, Sleep)</li>
+                  <li>Refrigerant R32, mai ecologic</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Nivel de zgomot usor mai ridicat comparativ cu modelele premium</li>
+                  <li>Lipsesc functiile smart (Wi-Fi, control vocal)</li>
+                  <li>Performanta la incalzire in conditii de ger poate fi limitata</li>
+                  <li>Materialele de constructie pot fi mai putin premium</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="mitsubishi-electric-msz-ay25vgk-muz-ay25vg-9000-btu" data-review>
+            <div data-review-bar>
+              <h3>Mitsubishi Electric MSZ-AY25VGK/MUZ-AY25VG 9000 BTU</h3>
+              <span data-review-tag>Premium</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 9000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A+++ racire / A++ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 19 dB(A) interior / 48 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter (Hyper Heating)</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 798 x 295 x 263 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Mitsubishi Electric MSZ-AY25VGK, parte a seriei Kirigamine, este un aparat de aer conditionat premium, destinat celor care cauta performanta de varf, eficienta energetica foarte bun si fiabilitate. Acest model de 9000 BTU este perfect pentru camere mai mici, dar isi arata adevarata valoare prin tehnologia sa avansata.</p><p>Ce ofera tehnologia Hyper Heating? Aceasta tehnologie permite aparatului sa mentina o capacitate de incalzire ridicata chiar si la temperaturi exterioare foarte scazute (pana la -25°C). Spre deosebire de alte aparate, nu vei simti o scadere drastica a performantei pe timp de iarna.</p><p>Cum se traduce eficienta energetica in economii? Cu o clasa energetica A+++ la racire si A++ la incalzire, acest aparat este unul dintre cele mai eficiente de pe piata. Consumul anual de energie este minim, ceea ce inseamna costuri de operare foarte scazute pe termen lung. Poti vedea diferente clare pe factura de curent.</p><p>Cat de silentios este acest model? Nivelul de zgomot de doar 19 dB(A) pentru unitatea interioara este impresionant. Este practic inaudibil in timpul noptii sau cand lucrezi acasa, asigurand un mediu de lucru si odihna optim.</p><p>Ce functii smart integreaza? Seria Kirigamine are functii avansate de control, inclusiv posibilitatea de a integra un modul Wi-Fi (optional) pentru control de la distanta prin aplicatia MELCloud. Acest lucru iti permite sa monitorizezi si sa controlezi aparatul de oriunde.</p><p>Este filtrul de aer performant? Modelul include un sistem avansat de filtrare, cu filtru catechin si un filtru optional Plasma Quad Plus, care neutralizeaza bacteriile, virusurile, alergenii si chiar mirosurile neplacute. Aerul din locuinta va fi mai curat si mai sanatos.</p><p>Pentru cine este potrivit acest model? Mitsubishi Electric MSZ-AY25VGK 9000 BTU este ideal pentru dormitoare, birouri mici sau camere de copii (pana la 15-20 mp), in special in zonele cu ierni friguroase. Este pentru utilizatorii care pun accent pe cea mai inalta eficienta energetica, fiabilitate pe termen lung, functionare ultra-silentioasa si calitate superioara a aerului.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Eficienta energetica de top (A+++ racire / A++ incalzire)</li>
+                  <li>Performanta excelenta la incalzire, chiar si la temperaturi exterioare scazute (Hyper Heating)</li>
+                  <li>Nivel de zgomot extrem de redus (19 dB(A))</li>
+                  <li>Sistem avansat de filtrare a aerului</li>
+                  <li>Fiabilitate dovedita a brandului Mitsubishi Electric</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Pretul este semnificativ mai ridicat fata de modelele mid-range si budget</li>
+                  <li>Modul Wi-Fi este optional si adauga costuri suplimentare</li>
+                  <li>Capacitatea de 9000 BTU este potrivita doar pentru spatii mici</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="samsung-ar12tssdawkneu-12000-btu" data-review>
+            <div data-review-bar>
+              <h3>Samsung AR12TSSDAWKNEU 12000 BTU</h3>
+              <span data-review-tag>Best Buy 2026</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 22 dB(A) interior / 50 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Digital Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 859 x 299 x 215 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Modelul Samsung AR12TSSDAWKNEU, din seria 'Serene', ofera o combinatie echilibrata de performanta, eficienta si un pret competitiv, fiind o optiune 'Best Buy' pentru multi utilizatori in 2026. Capacitatea de 12000 BTU il face potrivit pentru majoritatea camerelor de zi sau dormitoarelor.</p><p>Ce promite tehnologia Digital Inverter? Similar cu alte modele Samsung, compresorul Digital Inverter asigura o functionare eficienta, mentinand temperatura constanta cu un consum de energie redus. Poti te astepta la o economie de pana la 65% fata de aparatele clasice.</p><p>Cat de silentios este acest aparat? Cu un nivel de zgomot de 22 dB(A) in modul de functionare normal, este suficient de silentios pentru a nu deranja in timpul zilei sau al noptii. Vei observa ca sunetul este mult diminuat fata de generatiile anterioare.</p><p>Ce inseamna functia 'Auto Clean'? Aceasta functie previne formarea bacteriilor si mucegaiului in unitatea interioara prin uscarea schimbatorului de caldura dupa fiecare utilizare. ajuta la mentinerea unui aer mai curat si la prelungirea vietii aparatului.</p><p>Este usor de intretinut? Filtrul Easy Filter Plus este pozitionat in partea de sus, fiind usor accesibil pentru curatare periodica. Este important sa il cureti regulat pentru a mentine eficienta aparatului si calitatea aerului.</p><p>Cum se compara cu alte modele Samsung? Acest model este o optiune de mijloc, oferind tehnologia inverter si functia Auto Clean la un pret mai accesibil decat seria WindFree. Daca nu ai nevoie neaparat de tehnologia 'fara curenti de aer', este o alegere foarte buna.</p><p>Pentru cine este potrivit acest model? Samsung AR12TSSDAWKNEU 12000 BTU este ideal pentru camere de zi, dormitoare sau birouri de dimensiuni medii (pana la 25-30 mp). Este pentru utilizatorii care cauta un aparat de aer conditionat fiabil, eficient energetic, usor de utilizat si de intretinut, cu un raport calitate-pret excelent.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Raport calitate-pret excelent</li>
+                  <li>Compresor Digital Inverter eficient</li>
+                  <li>Functia 'Auto Clean' pentru igiena unitatii interioare</li>
+                  <li>Nivel de zgomot acceptabil (22 dB(A))</li>
+                  <li>Refrigerant R32 ecologic</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Nu dispune de tehnologia WindFree</li>
+                  <li>Lipsesc functiile smart (Wi-Fi integrat)</li>
+                  <li>Designul este mai putin modern comparativ cu alte serii Samsung</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          
+          <section id="comparatie">
+            <h2>Samsung vs LG Aer Conditionat 2026: Modele Populare</h2>
+            <div data-comparison>
+              <table>
+                <thead><tr><th>Model</th><th>Capacitate</th><th>Clasa energetica</th><th>Zgomot</th><th>Pret</th><th>Potrivit pentru</th></tr></thead>
+                <tbody>
+              <tr><td>Samsung WindFree Comfort 2.0</td><td>12000 BTU</td><td>A++ / A+</td><td>20 dB(A)</td><td>aprox. 3.200 lei</td><td>Dormitoare, camere de zi medii (25-30 mp), confort fara curenti</td></tr>
+              <tr><td>LG Dual Inverter Voice P12RHP</td><td>12000 BTU</td><td>A++ / A+</td><td>21 dB(A)</td><td>aprox. 3.000 lei</td><td>Camere de zi, birouri (25-30 mp), utilizatori smart home</td></tr>
+              <tr><td>Gree Bora Plus GWH12ACBX</td><td>12000 BTU</td><td>A++ / A+</td><td>24 dB(A)</td><td>aprox. 2.200 lei</td><td>Garsoniere, dormitoare mici (20-25 mp), buget redus</td></tr>
+              <tr><td>Mitsubishi Electric MSZ-AY25VGK</td><td>9000 BTU</td><td>A+++ / A++</td><td>19 dB(A)</td><td>aprox. 4.500 lei</td><td>Dormitoare, birouri mici (15-20 mp), performanta de top</td></tr>
+              <tr><td>Samsung AR12TSSDAWKNEU</td><td>12000 BTU</td><td>A++ / A+</td><td>22 dB(A)</td><td>aprox. 2.800 lei</td><td>Camere de zi, dormitoare (25-30 mp), raport calitate-pret</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          
+          <section id="ghid">
+            <h2>Cum alegi intre Samsung si LG aer conditionat 2026</h2>
+            <div data-guide>
+              <p>Alegerea unui aer conditionat nou, fie el Samsung, LG sau alt brand, implica luarea in calcul a mai multor factori cheie. Nu te lasa pacalit doar de pret sau de aspect. Gandeste-te la nevoile tale specifice si la cum va fi folosit aparatul.</p><h4>Ce capacitate BTU este potrivita pentru spatiul meu?</h4><p>Capacitatea, masurata in BTU (British Thermal Units), este cel mai important criteriu. O regula generala: 9000 BTU pentru camere de pana la 20 mp, 12000 BTU pentru camere de 20-30 mp, 18000 BTU pentru spatii de 30-45 mp, iar peste 45 mp ai nevoie de 24000 BTU sau chiar doua unitati.</p><ul><li><strong>Factori care influenteaza necesarul de BTU:</strong> izolatia termica a locuintei, numarul de ferestre, expunerea la soare, numarul de persoane care folosesc camera, prezenta altor surse de caldura (electrocasnice, calculatoare).</li><li><strong>Greseli de evitat:</strong> Alegerea unui aparat cu prea multi BTU duce la cicluri scurte de functionare, umiditate crescuta si consum ineficient. Un aparat subdimensionat va functiona continuu, fara a atinge temperatura dorita.</li></ul><h4>Ce inseamna compresorul Inverter?</h4><p>Compresoarele Inverter ajusteaza viteza pentru a mentine temperatura dorita, spre deosebire de compresoarele clasice on-off, care pornesc si se opresc. Aceasta tehnologie ofera:</p><ul><li><strong>Economie de energie:</strong> Pana la 70% mai eficient decat modelele non-inverter.</li><li><strong>Confort sporit:</strong> Mentine temperatura constant, fara fluctuatii mari.</li><li><strong>Durata de viata mai lunga:</strong> Reduce stresul asupra componentelor interne.</li><li><strong>Functionare silentioasa:</strong> In general, aparatele cu inverter sunt mai silentioase.</li></ul><h4>Cat de important este nivelul de zgomot?</h4><p>Nivelul de zgomot, masurat in decibeli (dB(A)), conteaza, mai ales pentru dormitoare sau birouri. Unitatile interioare sub 25 dB(A) sunt considerate silentioase. Verifica specificatiile si pentru unitatea exterioara, pentru a nu deranja vecinii.</p><h4>Ce functii suplimentare ar trebui sa caut?</h4><p>Brandurile precum Samsung si LG ofera o multitudine de functii:</p><ul><li><strong>Wi-Fi / Smart Control:</strong> Permite controlul aparatului de la distanta prin aplicatia mobila.</li><li><strong>Filtrare avansata:</strong> Filtre pentru praf, bacterii, virusuri, alergeni.</li><li><strong>Moduri speciale:</strong> Sleep, Turbo, Auto Clean, Auto Dry.</li><li><strong>Control vocal:</strong> Pentru integrare cu asistentii smart.</li><li><strong>Tehnologia 'fara curenti de aer':</strong> Cum ar fi WindFree de la Samsung.</li></ul><p>Nu plati pentru functii pe care nu le vei folosi. Analizeaza ce aduce fiecare model si daca se potriveste stilului tau de viata. Reaminteste-ti ca un <a href="/aer-conditionat-12000-btu-pret/">aer conditionat 12000 btu pret</a> poate varia mult in functie de brand si functii.</p>
+            </div>
+          </section>
+
+          <div data-faq>
+            <h2>Intrebari frecvente</h2>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Ce diferenta e intre Samsung si LG aer conditionat 2026?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Samsung exceleaza adesea in tehnologii precum WindFree (fara curenti de aer) si functii smart integrate. LG se distinge prin compresorul Dual Inverter, eficienta energetica sporita si optiuni de control vocal. Ambele ofera modele de 12000 BTU in jur de 3000-3200 lei.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Cat consuma un aer conditionat Samsung sau LG de 12000 BTU pe luna?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Un aparat inverter de 12000 BTU, folosit 8 ore pe zi la o temperatura medie (ex: 24°C), poate consuma intre 80 si 150 kWh pe luna. Consumul real depinde de clasa energetica (A++ sau A+++), izolatia locuintei si temperatura exterioara.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Ce aparat de aer conditionat sa aleg pentru un apartament de 2 camere?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Pentru un apartament de 2 camere (aprox. 40-50 mp total), sunt recomandate doua unitati: una de 9000 BTU pentru dormitor/birou si una de 12000 BTU pentru living. Daca bugetul permite, opteaza pentru modele cu clasa energetica A++ sau A+++.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Este bun Gree Bora Plus 12000 BTU ca raport calitate-pret?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Da, Gree Bora Plus 12000 BTU este o optiune buna pentru bugete mici, oferind tehnologie inverter la un pret accesibil (aprox. 2200 lei). Performanta si nivelul de zgomot sunt decente pentru pretul sau, dar nu se compara cu modelele premium de la Samsung sau LG.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Ce probleme pot aparea la un aer conditionat Samsung sau LG?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Cele mai comune probleme includ pierderi de agent frigorific (necesita verificare de catre un tehnician), blocarea filtrelor (necesita curatare regulata), defectiuni ale telecomenzii sau ale unitatii electronice. O intretinere periodica reduce riscul acestor probleme.
+                </div>
+              </div>
+          </div>
+
+          <PrevNextNav currentSlug="samsung-vs-lg-aer-conditionat-2026" />
+
+        </div>
+      </div>
+    </div>
+
+    <SimilarArticles
+      currentSlug="samsung-vs-lg-aer-conditionat-2026"
+      category="Comparatii Modele"
+      categorySlug="comparatii-modele"
+    />
+  </article>
+
+  <script>
+    // Table scroll detection
+    (function() {
+      const outer = document.querySelector('[data-table-wrap]');
+      if (!outer) return;
+      const scroll = outer.querySelector('[data-table-scroll]');
+      function check() {
+        if (scroll.scrollWidth > scroll.clientWidth) {
+          outer.classList.add('can-scroll');
+        } else {
+          outer.classList.remove('can-scroll');
+        }
+        if (scroll.scrollLeft + scroll.clientWidth >= scroll.scrollWidth - 2) {
+          outer.classList.remove('can-scroll');
+        }
+      }
+      check();
+      scroll.addEventListener('scroll', check);
+      window.addEventListener('resize', check);
+    })();
+
+    // Outline tracking
+    (function() {
+      const links = document.querySelectorAll('#sideOutline a, #mobileOutline a');
+      const secs = [];
+      links.forEach(link => {
+        const id = link.getAttribute('href')?.replace('#', '');
+        const el = id && document.getElementById(id);
+        if (el) secs.push({ el, link });
+      });
+      if (!secs.length) return;
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const m = secs.find(s => s.el === entry.target);
+          if (m && entry.isIntersecting) {
+            links.forEach(l => l.parentElement?.classList.remove('is-active'));
+            m.link.parentElement?.classList.add('is-active');
+            links.forEach(l => {
+              if (l !== m.link && l.getAttribute('href') === m.link.getAttribute('href')) {
+                l.parentElement?.classList.add('is-active');
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-72px 0px -60% 0px' });
+      secs.forEach(s => obs.observe(s.el));
+    })();
+  </script>
+</Layout>
