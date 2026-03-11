@@ -1,0 +1,429 @@
+---
+export const frontmatter = {
+  title: "Vivax Vs Vortex Aer Conditionat",
+  slug: "vivax-vs-vortex-aer-conditionat",
+  category: "Comparatii Modele",
+  categorySlug: "comparatii-modele",
+  excerpt: "Cautati un aer conditionat Vivax sau Vortex pentru locuinta dumneavoastra? Un model Vivax de 12000 BTU, precum Vivax Cool ACP-12CH35AEX, poate fi gasit in jur de 1.800 lei, in timp ce un echivalent Vortex, cum ar fi Vortex VORT35AO, costa aproximativ 1.700 lei (preturi estimative 2026). Ambele ofera capacitati similare pentru incaperi de pana la 35 mp.",
+  image: "/images/articles/vivax-vs-vortex-aer-conditionat.webp",
+  publishDate: "2026-03-11T16:47:38.554Z",
+  modifiedDate: "2026-03-11T16:47:38.554Z",
+  author: "Andrei Petrescu"
+};
+
+import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  excerpt: item.excerpt || '',
+  image: `/images/articles/${item.keyword.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}.webp`,
+  date: item.date || new Date().toISOString()
+}));
+---
+
+<Layout
+  title={`${frontmatter.title} | AerConditionatOferte.ro`}
+  description={frontmatter.excerpt}
+  canonical={`/${frontmatter.slug}/`}
+  type="article"
+  image={frontmatter.image}
+  author={frontmatter.author}
+  publishedTime={frontmatter.publishDate}
+  modifiedTime={frontmatter.modifiedDate}
+  faqSchema={{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Cat costa un aer conditionat Vivax de 12000 BTU in 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un model Vivax de 12000 BTU, precum ACP-12CH35AEX, costa in jur de 1.800 lei. Pretul poate varia in functie de promotii si magazin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ce diferenta este intre Vivax si Vortex aer conditionat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vivax ofera de obicei clase energetice superioare (A++/A+) si compresor inverter, pe cand Vortex se axeaza pe un pret mai mic cu compresor on-off (A+/A). Vivax este o optiune mai eficienta energetic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cat consuma un aer conditionat de 12000 BTU pe ora?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un aparat de 12000 BTU cu inverter si clasa A++ consuma aproximativ 0.8-1.2 kWh in modul de racire. Un model on-off poate consuma 1.5-2 kWh."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ce aparat de aer conditionat Vivax este potrivit pentru un apartament?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pentru un apartament standard, un model Vivax de 12000 BTU cu inverter este recomandat, oferind echilibru intre performanta, economie si confort. Modelul ACP-12CH35AEX este o optiune buna."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ce probleme pot aparea la un aer conditionat Vortex?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Modelele Vortex cu compresor on-off pot avea un consum mai mare si un nivel de zgomot usor ridicat. De asemenea, pot aparea fluctuatii de temperatura. Mentenanta regulata este importanta."
+        }
+      }
+    ]
+  }}
+  breadcrumbs={[
+    { name: "Acasa", url: "/" },
+    { name: "Comparatii Modele", url: "/comparatii-modele/" },
+    { name: "Vivax Vs Vortex Aer Conditionat", url: "/vivax-vs-vortex-aer-conditionat/" }
+  ]}
+>
+  <article>
+    <header data-article-hdr>
+      <div data-shell>
+        <div data-article-hdr-inner>
+          <nav data-breadcrumb>
+            <a href="/">Acasa</a>
+            <span>/</span>
+            <a href={`/${frontmatter.categorySlug}/`}>{frontmatter.category}</a>
+            <span>/</span>
+            <span>{frontmatter.title}</span>
+          </nav>
+          <h1>{frontmatter.title}</h1>
+          <div data-article-meta>
+            <span>{frontmatter.author}</span>
+            <span>&bull;</span>
+            <time datetime={frontmatter.publishDate}>{new Date(frontmatter.publishDate).toLocaleDateString('ro-RO', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div data-shell>
+      <div data-article-body>
+        <div data-content>
+        <img src="/images/articles/vivax-vs-vortex-aer-conditionat.webp" alt="Vivax Vs Vortex Aer Conditionat" data-entry-img width="800" height="600" loading="eager" decoding="async" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;" />
+
+        <div data-toc-mobile id="mobileOutline">
+          <button onclick="document.getElementById('mobileOutline').classList.toggle('is-open')">
+            <span>Cuprins</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul>
+            <li><a href="#vivax-cool-acp-12ch35aex">Vivax Cool ACP-12CH35AEX</a></li>
+            <li><a href="#vortex-vort35ao">Vortex VORT35AO</a></li>
+            <li><a href="#gree-bora-gwh12acb-gwh12aeb">Gree Bora GWH12ACB/GWH12AEB</a></li>
+            <li><a href="#samsung-windfree-ar12tssfawkneu">Samsung WindFree AR12TSSFAWKNEU</a></li>
+            <li><a href="#comparatie">Vivax vs Vortex aer conditionat: Diferente cheie</a></li>
+            <li><a href="#ghid">Cum sa alegi intre Vivax si Vortex</a></li>
+            <li><a href="#faq">Intrebari frecvente</a></li>
+          </ul>
+        </div>
+
+        <section id="intro">
+          <p>Cautati un aer conditionat Vivax sau Vortex pentru locuinta dumneavoastra? Un model Vivax de 12000 BTU, precum Vivax Cool ACP-12CH35AEX, poate fi gasit in jur de 1.800 lei, in timp ce un echivalent Vortex, cum ar fi Vortex VORT35AO, costa aproximativ 1.700 lei (preturi estimative 2026). Ambele ofera capacitati similare pentru incaperi de pana la 35 mp.</p><p>Alegerea intre Vivax si Vortex depinde de prioritatile dumneavoastra: buget, functii specifice sau eficienta energetica. Daca spatiul este mai mic, un aparat de 9000 BTU ar fi suficient, iar daca este mai mare, un model de 18000 BTU ar fi necesar. In acest articol, vom compara specificatiile si performantele celor doua branduri pentru a va ajuta sa decideti.</p><p>Vom analiza aspecte precum nivelul de zgomot, clasa energetica, tipul de compresor si functiile suplimentare.</p>
+        </section>
+
+          <h2>Vivax Vs Vortex Aer Conditionat</h2>
+          
+          <article id="vivax-cool-acp-12ch35aex" data-review>
+            <div data-review-bar>
+              <h3>Vivax Cool ACP-12CH35AEX</h3>
+              <span data-review-tag>Raport Calitate-Pret</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 24 dB(A) interior / 53 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 777 x 250 x 201 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Vivax ACP-12CH35AEX este o optiune accesibila pentru cei care cauta un aparat de aer conditionat cu tehnologie inverter. Este un model frecvent intalnit in locuintele din Romania, oferind un echilibru intre cost si performanta pentru camere de dimensiuni medii.</p><p>Ce performante ofera compresorul inverter? Compresorul inverter ajusteaza continuu turatia motorului pentru a mentine temperatura dorita, reducand fluctuatiile si consumul de energie comparativ cu sistemele on-off. Acest lucru inseamna confort termic sporit si facturi mai mici la electricitate.</p><p>Cat de silentios este in functionare? Unitatea interioara atinge un nivel minim de zgomot de 24 dB(A), fiind comparabil cu un susur slab. Acest nivel este potrivit pentru dormitoare sau birouri, unde linistea este importanta.</p><p>Merita diferenta de pret fata de modelele mai ieftine? Tehnologia inverter si clasa energetica superioara (A++/A+) ajuta la economii pe termen lung. Daca utilizarea este frecventa, investitia initiala se poate amortiza prin consum redus.</p><p>Ce functii suplimentare are? Modelul are mod turbo pentru racire rapida, mod sleep pentru confort nocturn si functia de auto-restart. telecomanda este intuitiva, facilitand setarea parametrilor doriti.</p><p>Care sunt specificatiile tehnice cheie? Capacitatea de 12000 BTU este ideala pentru incaperi de pana la 35 mp. Refrigerantul R32 este mai ecologic si mai eficient decat predecesorii sai.</p><p>Vivax ACP-12CH35AEX este potrivit pentru cei care cauta un aparat de aer conditionat cu inverter la un pret competitiv. Este o alegere buna pentru dormitoare, livinguri de dimensiuni medii sau birouri unde se doreste un echilibru intre performanta si costuri de operare.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Pret accesibil pentru un aparat cu inverter</li>
+                  <li>Clasa energetica buna (A++/A+)</li>
+                  <li>Nivel de zgomot redus in modul silentios</li>
+                  <li>Utilizeaza refrigerant ecologic R32</li>
+                  <li>Functii utile precum auto-restart si mod sleep</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Durabilitatea pe termen lung poate fi inferioara brandurilor premium</li>
+                  <li>Serviciul post-vanzare poate varia ca disponibilitate</li>
+                  <li>Designul unitatii interioare este unul standard, fara elemente deosebite</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="vortex-vort35ao" data-review>
+            <div data-review-bar>
+              <h3>Vortex VORT35AO</h3>
+              <span data-review-tag>Pentru Buget Mic</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A+ racire / A incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 25 dB(A) interior / 54 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> On-Off</span>
+              <span data-spec><strong>refrigerant:</strong> R410A</span>
+              <span data-spec><strong>dimensiuni:</strong> 715 x 250 x 190 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Vortex VORT35AO reprezinta o optiune pentru cei cu un buget mai restrans, oferind o capacitate de climatizare de 12000 BTU. Fiind un model cu compresor on-off, diferenta de pret fata de aparatele inverter se reflecta in costurile de operare.</p><p>Cum se compara compresorul on-off cu inverterul? Compresoarele on-off functioneaza la capacitate maxima pana ating temperatura setata, apoi se opresc complet, repornind cand temperatura creste. Acest ciclu duce la fluctuatii de temperatura si un consum de energie mai mare decat la aparatele inverter.</p><p>Cat de eficient energetic este? Clasa energetica A+/A nu este la fel de performanta ca A++/A+, ceea ce inseamna un consum mai ridicat de electricitate, in special daca aparatul functioneaza mult timp.</p><p>Este nivelul de zgomot deranjant? Cu un minim de 25 dB(A) in modul silentios, aparatul este acceptabil pentru utilizare in spatii unde zgomotul nu este o prioritate majora. Pentru dormitoare, insa, un aparat mai silentios ar fi de preferat.</p><p>Ce functii sunt incluse? Acest model are functii de baza precum racire, incalzire, ventilare si dezumidificare. Telecomanda permite controlul acestor moduri, dar nu ofera functii avansate de programare sau conectivitate smart.</p><p>Ce refrigerant foloseste? Vortex VORT35AO utilizeaza refrigerant R410A, un agent frigorific mai vechi, care are un impact mai mare asupra mediului comparativ cu R32.</p><p>Acest aparat este potrivit pentru cei care au nevoie de aer conditionat pentru utilizare ocazionala sau pentru spatii unde eficienta energetica si nivelul de zgomot nu sunt critice. Este o solutie de baza pentru cei cu buget limitat.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Pret de achizitie foarte scazut</li>
+                  <li>Capacitate de 12000 BTU pentru incaperi medii</li>
+                  <li>Functii esentiale de climatizare incluse</li>
+                  <li>Dimensiuni compacte ale unitatii interioare</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Consum energetic mai mare datorita compresorului on-off</li>
+                  <li>Clasa energetica inferioara comparativ cu aparatele inverter</li>
+                  <li>Utilizeaza refrigerant R410A, mai putin ecologic</li>
+                  <li>Nivel de zgomot usor mai ridicat</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="gree-bora-gwh12acb-gwh12aeb" data-review>
+            <div data-review-bar>
+              <h3>Gree Bora GWH12ACB/GWH12AEB</h3>
+              <span data-review-tag>Alegerea Noastra</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 22 dB(A) interior / 50 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 732 x 255 x 196 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Gree Bora GWH12ACB/GWH12AEB este un model popular pe piata din Romania, oferind o combinatie de tehnologie inverter, eficienta energetica si un pret competitiv. Este o varianta buna pentru cei care cauta performanta fara a depasi bugetul.</p><p>Cum se descurca compresorul inverter in utilizare zilnica? Compresorul inverter mentine o temperatura constanta, evitand socurile termice si economisind energie. Aceasta tehnologie este standard pe modelele mai noi si aduce beneficii clare pe termen lung.</p><p>Ce nivel de zgomot ofera unitatea interioara? Cu un minim de 22 dB(A), unitatea interioara este foarte silentioasa, potrivindu-se perfect pentru dormitoare sau camere de copii. Zgomotul este abia perceptibil.</p><p>Merita sa investesti intr-un model Gree Bora? Raportul calitate-pret este unul dintre punctele forte. Eficienta energetica A++/A+ si fiabilitatea brandului Gree justifica pretul, care este de obicei in intervalul mid-range, in jur de 2.000-2.200 lei.</p><p>Ce functii inteligente integreaza? Acest model are Wi-Fi integrat, permitand controlul prin aplicatia mobila. Functii precum auto-diagnoza, mod de economisire a energiei si temporizator programabil sunt prezente.</p><p>Ce refrigerant utilizeaza si cum se compara? Foloseste refrigerantul R32, considerat mai prietenos cu mediul si mai eficient decat R410A. Acest aspect este important pentru sustenabilitate.</p><p>Gree Bora GWH12ACB/GWH12AEB este recomandat pentru apartamente si case unde se doreste un climat confortabil si costuri de operare reduse. Este ideal pentru familii si pentru cei care apreciaza functiile smart, cum ar fi controlul prin Wi-Fi.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Tehnologie inverter pentru economie de energie</li>
+                  <li>Foarte silentios, ideal pentru dormitoare</li>
+                  <li>Clasa energetica superioara (A++/A+)</li>
+                  <li>Control prin Wi-Fi inclus</li>
+                  <li>Utilizeaza refrigerant R32</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Designul este functional, dar nu neaparat premium</li>
+                  <li>Disponibilitatea anumitor piese de schimb poate fi limitata pe termen lung</li>
+                  <li>Necesita o instalare corecta pentru a beneficia de performanta maxima</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="samsung-windfree-ar12tssfawkneu" data-review>
+            <div data-review-bar>
+              <h3>Samsung WindFree AR12TSSFAWKNEU</h3>
+              <span data-review-tag>Performanta Top</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 19 dB(A) interior / 46 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Digital Inverter Boost</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 857 x 299 x 207 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Samsung WindFree AR12TSSFAWKNEU are tehnologia WindFree, care promite o climatizare fara curenti de aer directi. Este un model premium, cu un pret pe masura, insa functiile sale avansate justifica investitia pentru cei care cauta confort sporit.</p><p>Ce inseamna tehnologia WindFree? In loc sa sufle aer rece direct, unitatea disperseaza aerul printr-un flux de mii de micro-gauri, creand un aer de "liniste" (still air). Acest lucru elimina senzatia neplacuta de curent.</p><p>Cat de eficient este compresorul Digital Inverter Boost? Acest compresor este optimizat pentru a functiona la viteze ridicate, racind sau incalzind aerul mult mai rapid. mentine temperatura cu fluctuatii minime, economisind energie.</p><p>Este acest model mai silentios decat altele? Nivelul de zgomot de 19 dB(A) este printre cele mai scazute de pe piata, fiind practic inaudibil. Acest aspect il recomanda pentru dormitoare sau spatii unde linistea absoluta conteaza.</p><p>Ce alte functii avansate ofera? Conectivitatea Wi-Fi cu control prin aplicatia SmartThings, functia de curatare automata (Auto Clean) pentru prevenirea bacteriilor si mirosurilor, si modul AI Energy optimizat pentru a monitoriza si reduce consumul de energie.</p><p>Merita pretul mai ridicat? Daca functionalitatile premium, confortul sporit prin WindFree si eficienta energetica ridicata sunt prioritare, atunci da. Pretul se situeaza in jur de 2.800-3.000 lei.</p><p>Samsung WindFree AR12TSSFAWKNEU este destinat utilizatorilor care doresc cea mai buna experienta de climatizare, fara compromisuri. Este ideal pentru dormitoare, livinguri, birouri sau orice spatiu unde confortul termic si acustic sunt pe primul loc.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Tehnologie WindFree pentru confort maxim, fara curenti de aer</li>
+                  <li>Nivel de zgomot extrem de scazut (19 dB(A))</li>
+                  <li>Compresor Digital Inverter Boost pentru racire/incalzire rapida si eficienta</li>
+                  <li>Conectivitate Wi-Fi si control prin aplicatie</li>
+                  <li>Functii avansate de igienizare si optimizare consum energie</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Pret de achizitie ridicat</li>
+                  <li>Dimensiunea unitatii interioare este mai mare</li>
+                  <li>Complexitatea functiilor poate fi intimidanta pentru unii utilizatori</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          
+          <section id="comparatie">
+            <h2>Vivax vs Vortex aer conditionat: Diferente cheie</h2>
+            <div data-comparison>
+              <table>
+                <thead><tr><th>Model</th><th>Capacitate</th><th>Clasa energetica</th><th>Zgomot</th><th>Pret</th><th>Potrivit pentru</th></tr></thead>
+                <tbody>
+              <tr><td>Vivax Cool ACP-12CH35AEX</td><td>12000 BTU</td><td>A++ / A+</td><td>24 dB(A)</td><td>~1.800 lei</td><td>Spatii medii, utilizare frecventa</td></tr>
+              <tr><td>Vortex VORT35AO</td><td>12000 BTU</td><td>A+ / A</td><td>25 dB(A)</td><td>~1.700 lei</td><td>Bugete limitate, utilizare ocazionala</td></tr>
+              <tr><td>Gree Bora GWH12ACB/GWH12AEB</td><td>12000 BTU</td><td>A++ / A+</td><td>22 dB(A)</td><td>~2.100 lei</td><td>Apartamente, case, confort si economie</td></tr>
+              <tr><td>Samsung WindFree AR12TSSFAWKNEU</td><td>12000 BTU</td><td>A++ / A+</td><td>19 dB(A)</td><td>~2.900 lei</td><td>Confort premium, dormitoare, spatii unde linistea e esentiala</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          
+          <section id="ghid">
+            <h2>Cum sa alegi intre Vivax si Vortex</h2>
+            <div data-guide>
+              <p>Atunci cand comparati <strong>Vivax vs Vortex aer conditionat</strong>, este important sa analizati specificatiile tehnice si nevoile dumneavoastra.</p><h4>Ce capacitate BTU aveti nevoie?</h4><p>Capacitatea in BTU (British Thermal Units) conteaza. Pentru o garsoniera sau o camera mica (pana la 20 mp), 9000 BTU sunt suficiente. Pentru un living sau un dormitor de dimensiuni medii (pana la 35 mp), 12000 BTU este alegerea potrivita. Pentru spatii mai mari de 40 mp, aveti nevoie de 18000 BTU sau chiar mai mult.</p><h4>Inverter sau On-Off?</h4><p>Aparatele cu compresor inverter economisesc energie pe termen lung, mentinand o temperatura constanta. Cele on-off sunt mai ieftine la achizitie, dar consuma mai mult. Daca folositi aparatul zilnic, inverterul este recomandat. <a href="/daikin-vs-mitsubishi-aer-conditionat/">Aparatele premium precum Daikin sau Mitsubishi Electric</a> folosesc predominant tehnologie inverter.</p><h4>Clasa Energetica</h4><p>Cautati aparate cu clasa energetica A++ sau A+++ pentru racire. Desi pretul poate fi mai mare, economia la factura de curent este semnificativa. Aparatele mai vechi sau cele foarte ieftine au adesea clase energetice inferioare (A, B).</p><h4>Nivelul de Zgomot</h4><p>Pentru dormitoare sau birouri, un nivel de zgomot sub 25 dB(A) pentru unitatea interioara este ideal. Verificati specificatiile tehnice, deoarece producatorii mentioneaza de obicei nivelul minim de zgomot.</p><h4>Functii Suplimentare</h4><p>Verificati functiile utile: auto-restart (reporneste automat dupa pana de curent), mod sleep (ajusteaza temperatura pe timpul noptii), mod turbo (racire/incalzire rapida), dezumidificare, filtrare aer, si conectivitate Wi-Fi pentru control de la distanta. Branduri ca <a href="/samsung-vs-lg-aer-conditionat-2026/">Samsung si LG</a> exceleaza la capitolul functii smart.</p><h4>Refrigerantul</h4><p>Refrigerantul R32 este standardul actual, fiind mai eficient si mai ecologic decat R410A. Asigurati-va ca aparatul ales utilizeaza R32.</p><p>Comparatia <strong>vivax vs vortex aer conditionat</strong> arata ca ambele branduri ofera optiuni accesibile, insa Vivax tinde sa aiba specificatii usor superioare, in special la eficienta energetica si nivelul de zgomot. Branduri precum Gree sau Samsung ofera performante si functii superioare, dar la un pret pe masura.</p>
+            </div>
+          </section>
+
+          <div data-faq>
+            <h2>Intrebari frecvente</h2>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Cat costa un aer conditionat Vivax de 12000 BTU in 2026?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Un model Vivax de 12000 BTU, precum ACP-12CH35AEX, costa in jur de 1.800 lei. Pretul poate varia in functie de promotii si magazin.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Ce diferenta este intre Vivax si Vortex aer conditionat?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Vivax ofera de obicei clase energetice superioare (A++/A+) si compresor inverter, pe cand Vortex se axeaza pe un pret mai mic cu compresor on-off (A+/A). Vivax este o optiune mai eficienta energetic.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Cat consuma un aer conditionat de 12000 BTU pe ora?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Un aparat de 12000 BTU cu inverter si clasa A++ consuma aproximativ 0.8-1.2 kWh in modul de racire. Un model on-off poate consuma 1.5-2 kWh.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Ce aparat de aer conditionat Vivax este potrivit pentru un apartament?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Pentru un apartament standard, un model Vivax de 12000 BTU cu inverter este recomandat, oferind echilibru intre performanta, economie si confort. Modelul ACP-12CH35AEX este o optiune buna.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Ce probleme pot aparea la un aer conditionat Vortex?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Modelele Vortex cu compresor on-off pot avea un consum mai mare si un nivel de zgomot usor ridicat. De asemenea, pot aparea fluctuatii de temperatura. Mentenanta regulata este importanta.
+                </div>
+              </div>
+          </div>
+
+          <PrevNextNav currentSlug="vivax-vs-vortex-aer-conditionat" />
+
+        </div>
+      </div>
+    </div>
+
+    <SimilarArticles
+      currentSlug="vivax-vs-vortex-aer-conditionat"
+      category="Comparatii Modele"
+      categorySlug="comparatii-modele"
+    />
+  </article>
+
+  <script>
+    // Table scroll detection
+    (function() {
+      const outer = document.querySelector('[data-table-wrap]');
+      if (!outer) return;
+      const scroll = outer.querySelector('[data-table-scroll]');
+      function check() {
+        if (scroll.scrollWidth > scroll.clientWidth) {
+          outer.classList.add('can-scroll');
+        } else {
+          outer.classList.remove('can-scroll');
+        }
+        if (scroll.scrollLeft + scroll.clientWidth >= scroll.scrollWidth - 2) {
+          outer.classList.remove('can-scroll');
+        }
+      }
+      check();
+      scroll.addEventListener('scroll', check);
+      window.addEventListener('resize', check);
+    })();
+
+    // Outline tracking
+    (function() {
+      const links = document.querySelectorAll('#sideOutline a, #mobileOutline a');
+      const secs = [];
+      links.forEach(link => {
+        const id = link.getAttribute('href')?.replace('#', '');
+        const el = id && document.getElementById(id);
+        if (el) secs.push({ el, link });
+      });
+      if (!secs.length) return;
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const m = secs.find(s => s.el === entry.target);
+          if (m && entry.isIntersecting) {
+            links.forEach(l => l.parentElement?.classList.remove('is-active'));
+            m.link.parentElement?.classList.add('is-active');
+            links.forEach(l => {
+              if (l !== m.link && l.getAttribute('href') === m.link.getAttribute('href')) {
+                l.parentElement?.classList.add('is-active');
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-72px 0px -60% 0px' });
+      secs.forEach(s => obs.observe(s.el));
+    })();
+  </script>
+</Layout>
