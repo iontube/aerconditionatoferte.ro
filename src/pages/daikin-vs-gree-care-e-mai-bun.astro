@@ -1,0 +1,470 @@
+---
+export const frontmatter = {
+  title: "Daikin Vs Gree Care E Mai Bun",
+  slug: "daikin-vs-gree-care-e-mai-bun",
+  category: "Comparatii Modele",
+  categorySlug: "comparatii-modele",
+  excerpt: "Cand vine vorba de Daikin vs Gree, care e mai bun? In general, Daikin este perceput ca un brand premium, cu preturi mai mari, dar si cu o reputatie solida pentru fiabilitate si performanta, adesea avand modele de 12000 BTU in jur de 3.500 - 4.500 lei. Gree, pe de alta parte, este o optiune cu un raport calitate-pret mai accesibil, oferind modele similare de 12000 BTU in intervalul 2.500 - 3.200 lei, fiind o alegere populara pentru cei cu un buget mai restrans.",
+  image: "/images/articles/daikin-vs-gree-care-e-mai-bun.webp",
+  publishDate: "2026-03-12T16:54:30.938Z",
+  modifiedDate: "2026-03-12T16:54:30.938Z",
+  author: "Andrei Petrescu"
+};
+
+import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  excerpt: item.excerpt || '',
+  image: `/images/articles/${item.keyword.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}.webp`,
+  date: item.date || new Date().toISOString()
+}));
+---
+
+<Layout
+  title={`${frontmatter.title} | AerConditionatOferte.ro`}
+  description={frontmatter.excerpt}
+  canonical={`/${frontmatter.slug}/`}
+  type="article"
+  image={frontmatter.image}
+  author={frontmatter.author}
+  publishedTime={frontmatter.publishDate}
+  modifiedTime={frontmatter.modifiedDate}
+  faqSchema={{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Care e diferenta principala intre Daikin si Gree?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Daikin este un brand premium, recunoscut pentru fiabilitate si performanta superioara, avand preturi mai mari. Gree ofera un raport calitate-pret bun, fiind o optiune mai accesibila, potrivita pentru bugete restranse."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cat consuma un aer conditionat Daikin vs Gree?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ambele branduri ofera modele cu clase energetice similare (A++ / A+), dar Daikin tinde sa fie putin mai eficient datorita componentelor si tehnologiei superioare. Un aparat de 12000 BTU inverter consuma intre 0.7 - 1.2 kWh la racire, in functie de model si conditii."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ce model de aer conditionat e mai bun pentru un apartament de 2 camere?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pentru un apartament de 2 camere, cu suprafete de pana la 30 mp per camera, un aparat de 12000 BTU este, in general, suficient. Modele ca Gree Bora sau Daikin Sensira sunt optiuni bune, in functie de buget."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Daikin sau Gree, care se strica mai repede?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Daikin are o reputatie mai buna pentru durabilitate pe termen lung, datorita calitatii constructiei si a componentelor folosite. Modelele Gree sunt, de asemenea, fiabile, dar pot avea o durata de viata putin mai scurta comparativ cu cele premium."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Merita sa iau un aer conditionat 9000 BTU sau 12000 BTU?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un aparat de 9000 BTU este recomandat pentru spatii de pana la 20 mp (garsoniere, dormitoare). Pentru spatii intre 20-30 mp (livinguri, apartamente cu 2 camere), 12000 BTU este alegerea potrivita. Alegerea incorecta poate duce la consum mare sau climatizare ineficienta."
+        }
+      }
+    ]
+  }}
+  breadcrumbs={[
+    { name: "Acasa", url: "/" },
+    { name: "Comparatii Modele", url: "/comparatii-modele/" },
+    { name: "Daikin Vs Gree Care E Mai Bun", url: "/daikin-vs-gree-care-e-mai-bun/" }
+  ]}
+>
+  <article>
+    <header data-article-hdr>
+      <div data-shell>
+        <div data-article-hdr-inner>
+          <nav data-breadcrumb>
+            <a href="/">Acasa</a>
+            <span>/</span>
+            <a href={`/${frontmatter.categorySlug}/`}>{frontmatter.category}</a>
+            <span>/</span>
+            <span>{frontmatter.title}</span>
+          </nav>
+          <h1>{frontmatter.title}</h1>
+          <div data-article-meta>
+            <span>{frontmatter.author}</span>
+            <span>&bull;</span>
+            <time datetime={frontmatter.publishDate}>{new Date(frontmatter.publishDate).toLocaleDateString('ro-RO', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div data-shell>
+      <div data-article-body>
+        <div data-content>
+        <img src="/images/articles/daikin-vs-gree-care-e-mai-bun.webp" alt="Daikin Vs Gree Care E Mai Bun" data-entry-img width="800" height="600" loading="eager" decoding="async" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;" />
+
+        <div data-toc-mobile id="mobileOutline">
+          <button onclick="document.getElementById('mobileOutline').classList.toggle('is-open')">
+            <span>Cuprins</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul>
+            <li><a href="#daikin-sensira-r32-ftxf35a-rxf35a">Daikin Sensira R32 FTXF35A/RXF35A</a></li>
+            <li><a href="#gree-bora-gwh12acob-k6dna1a-i">Gree Bora GWH12ACOB-K6DNA1A/I</a></li>
+            <li><a href="#mitsubishi-electric-msz-ay25vgk-muz-ay25vg">Mitsubishi Electric MSZ-AY25VGK/MUZ-AY25VG</a></li>
+            <li><a href="#samsung-windfree-comfort-ar09txcaawkneu-xeu">Samsung WindFree Comfort AR09TXCAAWKNEU/XEU</a></li>
+            <li><a href="#vivax-r-design-acp-12ch50aex">Vivax R Design ACP-12CH50AEX</a></li>
+            <li><a href="#comparatie">Daikin vs Gree: Care E Mai Bun Pentru Tine?</a></li>
+            <li><a href="#ghid">Alegerea Aerului Conditionat: Daikin vs Gree</a></li>
+            <li><a href="#faq">Intrebari frecvente</a></li>
+          </ul>
+        </div>
+
+        <section id="intro">
+          <p>Cand vine vorba de Daikin vs Gree, care e mai bun? In general, Daikin este perceput ca un brand premium, cu preturi mai mari, dar si cu o reputatie solida pentru fiabilitate si performanta, adesea avand modele de 12000 BTU in jur de 3.500 - 4.500 lei. Gree, pe de alta parte, este o optiune cu un raport calitate-pret mai accesibil, oferind modele similare de 12000 BTU in intervalul 2.500 - 3.200 lei, fiind o alegere populara pentru cei cu un buget mai restrans.</p><p>Alegerea dintre Daikin si Gree depinde mult de prioritatile tale: buget, functii specifice sau preferinta pentru un anumit nivel de finisaj. Daca iti doresti cea mai buna eficienta energetica si un nivel de zgomot minim, iar pretul nu este un factor determinant, un model Daikin ar putea fi optiunea potrivita. Daca ai un buget limitat, dar totusi cauti un aparat eficient pentru spatiul tau, un model Gree ar putea fi o solutie satisfacatoare.</p><p>Acest articol te va ajuta sa intelegi diferentele cheie dintre cele doua branduri, analizand modele specifice si oferind indicii clare pentru a lua cea mai buna decizie pentru locuinta ta.</p>
+        </section>
+
+          <h2>Daikin Vs Gree Care E Mai Bun</h2>
+          
+          <article id="daikin-sensira-r32-ftxf35a-rxf35a" data-review>
+            <div data-review-bar>
+              <h3>Daikin Sensira R32 FTXF35A/RXF35A</h3>
+              <span data-review-tag>Premium</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 21 dB(A) interior / 48 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 770 x 285 x 225 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Modelul Daikin Sensira R32 FTXF35A/RXF35A se inscrie in segmentul de piata care cauta performanta si fiabilitate. Este un aparat echipat cu tehnologie inverter, ceea ce inseamna ca ajusteaza continuu puterea pentru a mentine temperatura dorita, fara fluctuatii mari.</p><p>Cat de eficient energetic este acest model? Clasa energetica A++ pentru racire si A+ pentru incalzire indica un consum redus de energie, contribuind la facturi lunare mai mici comparativ cu aparatele mai vechi sau cele cu clasificare inferioara. Acest aspect este important pe termen lung.</p><p>Ce nivel de zgomot ofera unitatea interioara? La doar 21 dB(A), acest aparat este printre cele mai silentioase de pe piata. In timpul functionarii, zgomotul este atat de redus incat este dificil de perceput, fiind ideal pentru dormitoare sau camere unde linistea conteaza.</p><p>Merita diferenta de pret fata de brandurile mai accesibile? Daikin investeste mult in cercetare si dezvoltare, iar acest lucru se reflecta in calitatea constructiei, durabilitatea componentelor si performantele constante. Unitatea exterioara poate reziste la diverse conditii meteo.</p><p>Ce functii suplimentare gasesti aici? Aparatul vine cu functii precum mod turbo pentru racire rapida, mod silentios pentru unitatea exterioara si un filtru de aer care ajuta la purificarea aerului din incapere. Controlul se poate face si prin Wi-Fi, daca achizitionezi modulul suplimentar.</p><p>Pentru cine este potrivit acest model? Daikin Sensira R32 FTXF35A/RXF35A este o optiune buna pentru apartamente sau case cu suprafete de pana la 25-30 mp, unde se doreste un echilibru intre performanta, eficienta energetica si un nivel de zgomot extrem de scazut. Pretul, situat in jur de 3.800 lei, il pozitioneaza ca o investitie pe termen lung.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Nivel de zgomot extrem de scazut (21 dB(A))</li>
+                  <li>Clasa energetica superioara (A++)</li>
+                  <li>Tehnologie Inverter pentru economie de energie</li>
+                  <li>Calitate constructiva si fiabilitate recunoscuta</li>
+                  <li>Refrigerant R32, mai ecologic</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Pret de achizitie mai ridicat fata de concurenta</li>
+                  <li>Functiile smart (Wi-Fi) necesita modul suplimentar</li>
+                  <li>Designul unitatii interioare este functional, dar nu neaparat spectaculos</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="gree-bora-gwh12acob-k6dna1a-i" data-review>
+            <div data-review-bar>
+              <h3>Gree Bora GWH12ACOB-K6DNA1A/I</h3>
+              <span data-review-tag>Raport Calitate-Pret</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 24 dB(A) interior / 53 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 805 x 285 x 194 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Gree Bora GWH12ACOB-K6DNA1A/I se prezinta ca o optiune competitiva in segmentul aparatelor de aer conditionat cu tehnologie inverter. Brandul Gree este cunoscut pentru volumul mare de productii si pentru oferirea unor solutii accesibile, fara a compromite in mod major performanta de baza.</p><p>Cum se descurca din punct de vedere al consumului? Aparatul are o clasa energetica A++ pe racire si A+ pe incalzire, ceea ce inseamna ca este relativ eficient. Pentru un model din aceasta categorie de pret, performantele energetice sunt un atu important.</p><p>Este unitatea interioara silentioasa? Cu un nivel de zgomot de 24 dB(A), aparatul este destul de silentios, insa putin peste cele mai performante modele de pe piata. Totusi, pentru majoritatea utilizatorilor, acest nivel de zgomot este acceptabil pentru utilizarea in living sau dormitor.</p><p>Merita sa il iei in considerare fata de modele mai scumpe? Gree Bora ofera o serie de functii utile, precum mod turbo, auto-restart si un mod econom. vine cu un filtru de praf integrat. Pretul sau, care se situeaza in jur de 2.700 lei, il face o alegere atractiva pentru cei care cauta un aparat performant la un cost redus.</p><p>Ce te mai poate interesa la acest model? Unitatea exterioara poate functioneze eficient chiar si la temperaturi scazute, ceea ce extinde aplicabilitatea sa pe parcursul anului. Controlul se face printr-o telecomanda intuitiva.</p><p>Pentru cine este cel mai potrivit? Gree Bora GWH12ACOB-K6DNA1A/I este o varianta buna pentru spatii de pana la 25-30 mp, in special pentru cei care cauta un aparat de aer conditionat cu inverter la un pret accesibil. Este o alegere echilibrata pentru locuinte unde bugetul este un factor important, dar se doreste totusi o buna eficienta energetica.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Pret de achizitie foarte bun</li>
+                  <li>Clasa energetica A++ pe racire</li>
+                  <li>Tehnologie Inverter pentru economie</li>
+                  <li>Functii de baza utile (turbo, auto-restart)</li>
+                  <li>Refrigerant R32</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Nivel de zgomot putin mai ridicat fata de modelele premium</li>
+                  <li>Calitatea materialelor poate fi inferioara brandurilor de top</li>
+                  <li>Functiile smart lipsesc din pachetul standard</li>
+                  <li>Durabilitatea pe termen foarte lung poate fi inferioara Daikin</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="mitsubishi-electric-msz-ay25vgk-muz-ay25vg" data-review>
+            <div data-review-bar>
+              <h3>Mitsubishi Electric MSZ-AY25VGK/MUZ-AY25VG</h3>
+              <span data-review-tag>Eficienta Maxima</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 9000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A+++ racire / A++ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 19 dB(A) interior / 45 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 885 x 250 x 215 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Mitsubishi Electric MSZ-AY25VGK/MUZ-AY25VG reprezinta varful de gama in materie de eficienta energetica si performanta. Acest model de 9000 BTU Poate pentru a oferi un confort optim in spatii mai mici, cu un consum minim de energie.</p><p>Ce performante ofera compresorul inverter? Tehnologia Hyper Inverter de la Mitsubishi Electric asigura un control extrem de precis al temperaturii, mentinand-o constanta cu minime fluctuatii. Acest lucru nu doar ca imbunatateste confortul, dar reduce si uzura componentelor, crescand durata de viata a aparatului.</p><p>Cat de silentios este in functionare? Cu un nivel de zgomot de doar 19 dB(A) pentru unitatea interioara, acest aparat este practic inaudibil. Este perfect pentru dormitoare sau birouri unde concentratia si odihna sunt esentiale.</p><p>Merita diferenta de pret fata de modelele mai ieftine? Clasa energetica A+++ pe racire si A++ pe incalzire vorbesc de la sine. Incalzirea la temperaturi exterioare scazute este, un punct forte, facandu-l o solutie viabila pe tot parcursul anului. Pretul sau, in jur de 4.200 lei, se justifica prin costurile de operare foarte reduse.</p><p>Ce functii specifice gasesti aici? Aparatul are senzorul "Melco" care detecteaza prezenta si miscarile in camera, ajustand automat puterea pentru a economisi energie atunci cand camera este goala. include functii de autodiagnosticare si purificare a aerului.</p><p>Pentru cine este potrivit acest model? Mitsubishi Electric MSZ-AY25VGK/MUZ-AY25VG este ideal pentru garsoniere, camere de copii sau birouri mici (pana la 20 mp) unde se doreste cea mai buna eficienta energetica, cel mai scazut nivel de zgomot si functii avansate. Este o investitie in confort si economie pe termen lung.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Clasa energetica de top (A+++ racire)</li>
+                  <li>Nivel de zgomot exceptional de scazut (19 dB(A))</li>
+                  <li>Performanta ridicata chiar si la temperaturi exterioare scazute</li>
+                  <li>Senzor de prezenta pentru economie de energie</li>
+                  <li>Calitate si fiabilitate de necontestat</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Pret de achizitie premium</li>
+                  <li>Capacitate de 9000 BTU, poate fi insuficient pentru spatii mai mari de 20 mp</li>
+                  <li>Functiile avansate pot fi complexe pentru utilizatorii mai putin tehnici</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="samsung-windfree-comfort-ar09txcaawkneu-xeu" data-review>
+            <div data-review-bar>
+              <h3>Samsung WindFree Comfort AR09TXCAAWKNEU/XEU</h3>
+              <span data-review-tag>Alegerea Noastra</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 9000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 19 dB(A) interior / 46 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 857 x 299 x 207 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Samsung WindFree Comfort AR09TXCAAWKNEU/XEU aduce in prim-plan tehnologia WindFree, menita sa elimine curentii de aer rece directi, distribuind aerul racit sau incalzit printr-un flux de 21.000 de micro-gauri.</p><p>Cat de bine functioneaza modul WindFree? Acest mod creeaza o "aerisire" blanda, mentinand temperatura dorita fara senzatia neplacuta de aer rece suflat direct. Este ideal pentru persoanele sensibile sau pentru camerele unde se petrece mult timp.</p><p>Ce performante energetice ofera? Aparatul are o clasa energetica A++ pe racire si A+ pe incalzire, ceea ce il face o optiune eficienta pentru spatii de pana la 20 mp. Compresorul Digital Inverter asigura o functionare stabila si un consum redus.</p><p>Nivelul de zgomot este un alt punct forte. Unitatea interioara functioneaza la un nivel de doar 19 dB(A), fiind foarte silentioasa. Acest lucru ajuta la un mediu de odihna sau lucru confortabil.</p><p>Merita sa platesti mai mult pentru aceasta tehnologie? Functiile smart integrate, controlabile prin aplicatia SmartThings, permit gestionarea aparatului de la distanta, programarea functionarii si monitorizarea consumului. Acest nivel de conectivitate adauga valoare aparatului.</p><p>Ce alte functii sunt de mentionat? Modul Fast Cooling raceste rapid camera, iar functia de autocuratare previne formarea bacteriilor si a mucegaiului in unitatea interioara. Aparatul este echipat cu un filtru Easy Filter Plus, usor de curatat.</p><p>Pentru cine este potrivit acest model? Samsung WindFree Comfort AR09TXCAAWKNEU/XEU este o alegere excelenta pentru cei care cauta un confort sporit, eliminand fluxul direct de aer rece, si care apreciaza functiile smart. Este ideal pentru dormitoare sau livinguri de dimensiuni mici spre medii (pana la 20 mp). Pretul sau, in jur de 3.200 lei, il plaseaza intr-o zona accesibila pentru tehnologia pe care o ofera.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Tehnologie WindFree pentru confort sporit</li>
+                  <li>Foarte silentios (19 dB(A))</li>
+                  <li>Control smart prin aplicatie (Wi-Fi integrat)</li>
+                  <li>Functie de autocuratare</li>
+                  <li>Clasa energetica buna (A++)</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Pretul este peste media modelelor de baza</li>
+                  <li>Capacitatea de 9000 BTU este potrivita doar pentru spatii mici</li>
+                  <li>Filtrarea aerului nu este la nivelul unui purificator dedicat</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="vivax-r-design-acp-12ch50aex" data-review>
+            <div data-review-bar>
+              <h3>Vivax R Design ACP-12CH50AEX</h3>
+              <span data-review-tag>Pentru Buget Mic</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 22 dB(A) interior / 52 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 715 x 255 x 190 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Vivax R Design ACP-12CH50AEX e pentru segmentului de piata care cauta un aparat de aer conditionat cu inverter la un pret foarte accesibil. Acest model ofera o capacitate de 12000 BTU, potrivita pentru spatii medii.</p><p>Cum se compara eficienta energetica? Aparatul are clasa energetica A++ pe racire si A+ pe incalzire, ceea ce il recomanda ca o optiune relativ economica din punct de vedere al consumului de energie electrica, mai ales comparativ cu aparatele mai vechi.</p><p>Cat de silentios este in operare? Unitatea interioara are un nivel de zgomot de 22 dB(A), fiind destul de silentioasa pentru majoritatea utilizatorilor. Zgomotul nu ar trebui sa fie o problema majora in timpul zilei sau chiar pe timpul noptii, la o distanta rezonabila.</p><p>Merita sa alegi un model Vivax? Brandul Vivax se concentreaza pe oferirea unor produse cu un raport calitate-pret atractiv. Acest model include functii esentiale precum modul turbo, auto-restart si un filtru de praf standard. Pretul, situat in jur de 2.400 lei, il face o optiune foarte tentanta.</p><p>Ce alte caracteristici are? Aparatul foloseste refrigerant R32, care este mai prietenos cu mediul decat generatiile anterioare. Designul unitatii interioare este modern si se integreaza usor in diverse decoruri.</p><p>Pentru cine este potrivit acest model? Vivax R Design ACP-12CH50AEX este o alegere foarte buna pentru cei cu un buget limitat care au nevoie de un aparat de aer conditionat cu inverter pentru o camera de zi, dormitor sau un apartament de dimensiuni medii (pana la 30 mp). Este o solutie functionala si economica.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Pret de achizitie foarte scazut</li>
+                  <li>Clasa energetica A++ pe racire</li>
+                  <li>Tehnologie Inverter</li>
+                  <li>Design modern si compact</li>
+                  <li>Refrigerant R32</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Calitatea materialelor poate fi inferioara brandurilor premium</li>
+                  <li>Functiile smart lipsesc</li>
+                  <li>Durabilitatea pe termen foarte lung poate fi un semn de intrebare</li>
+                  <li>Nivelul de zgomot, desi acceptabil, nu este cel mai scazut de pe piata</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          
+          <section id="comparatie">
+            <h2>Daikin vs Gree: Care E Mai Bun Pentru Tine?</h2>
+            <div data-comparison>
+              <table>
+                <thead><tr><th>Model</th><th>Capacitate</th><th>Clasa energetica</th><th>Zgomot</th><th>Pret</th><th>Potrivit pentru</th></tr></thead>
+                <tbody>
+              <tr><td>Daikin Sensira FTXF35A</td><td>12000 BTU</td><td>A++ / A+</td><td>21 dB(A)</td><td>~3.800 lei</td><td>Spatii 25-30 mp, cei ce cauta fiabilitate si zgomot minim</td></tr>
+              <tr><td>Gree Bora GWH12ACOB-K6DNA1A/I</td><td>12000 BTU</td><td>A++ / A+</td><td>24 dB(A)</td><td>~2.700 lei</td><td>Spatii 25-30 mp, buget redus, echilibru calitate-pret</td></tr>
+              <tr><td>Mitsubishi Electric MSZ-AY25VGK</td><td>9000 BTU</td><td>A+++ / A++</td><td>19 dB(A)</td><td>~4.200 lei</td><td>Spatii pana la 20 mp, eficienta maxima, zgomot minim</td></tr>
+              <tr><td>Samsung WindFree AR09TXCAAWKNEU</td><td>9000 BTU</td><td>A++ / A+</td><td>19 dB(A)</td><td>~3.200 lei</td><td>Spatii pana la 20 mp, confort fara curenti de aer, functii smart</td></tr>
+              <tr><td>Vivax R Design ACP-12CH50AEX</td><td>12000 BTU</td><td>A++ / A+</td><td>22 dB(A)</td><td>~2.400 lei</td><td>Spatii 25-30 mp, buget foarte mic, necesar de baza</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          
+          <section id="ghid">
+            <h2>Alegerea Aerului Conditionat: Daikin vs Gree</h2>
+            <div data-guide>
+              <p>Cand vine vorba de alegerea unui aer conditionat, fie ca te uiti la Daikin sau Gree, cateva aspecte raman constante. E important sa stii ce criterii sa urmaresti pentru a nu da gres.</p><h4>Ce capacitate BTU e potrivita pentru spatiul meu?</h4><p>Calculeaza suprafata camerei pe care vrei sa o climatizezi. O garsoniera sau un dormitor mic (pana la 20 mp) necesita un aparat de 9000 BTU. Pentru un living sau un apartament de 2 camere (pana la 30 mp), 12000 BTU este o alegere standard. Daca spatiul este mai mare de 35 mp, vei avea nevoie de 18000 BTU sau chiar mai mult.</p><h4>Inverter sau On-Off?</h4><p>Aparatele cu tehnologie inverter sunt cele recomandate. Ele ajusteaza puterea compresorului in functie de necesar, mentinand o temperatura constanta si economisind energie. Aparatele On-Off pornesc si se opresc la putere maxima, avand un consum mai mare si fluctuatii de temperatura.</p><h4>Clasa energetica conteaza?</h4><p>Absolut. Cauta aparate cu clasa energetica A++ sau A+++. Chiar daca pretul initial poate fi mai mare, economia la factura de curent pe termen lung este semnificativa. Verifica atat clasa pentru racire, cat si pe cea pentru incalzire (daca se foloseste si pentru asta).</p><h4>Nivelul de zgomot – cat de important e?</h4><p>Pentru dormitoare sau birouri, un nivel de zgomot sub 25 dB(A) pentru unitatea interioara este ideal. Daikin si Mitsubishi Electric exceleaza aici, oferind modele sub 20 dB(A). Gree si alte branduri accesibile pot ajunge la 24-26 dB(A), ceea ce este inca acceptabil pentru majoritatea situatiilor.</p><h4>Ce refrigerant sa aleg?</h4><p>Refrigerantul R32 este standardul actual. Este mai eficient si mai ecologic decat vechiul R410A. Toate modelele noi de la brandurile cunoscute folosesc R32.</p><p>Evita sa cumperi un aparat doar pentru ca e cel mai ieftin. Un aparat de aer conditionat este o investitie pe termen lung. Verifica recenziile, compara specificatiile si, daca este posibil, consulta un instalator autorizat. Pentru mai multe detalii despre cum sa alegi corect, citeste si <a href="/aer-conditionat-12000-btu-pret/">aer conditionat 12000 btu pret</a>.</p>
+            </div>
+          </section>
+
+          <div data-faq>
+            <h2>Intrebari frecvente</h2>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Care e diferenta principala intre Daikin si Gree?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Daikin este un brand premium, recunoscut pentru fiabilitate si performanta superioara, avand preturi mai mari. Gree ofera un raport calitate-pret bun, fiind o optiune mai accesibila, potrivita pentru bugete restranse.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Cat consuma un aer conditionat Daikin vs Gree?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Ambele branduri ofera modele cu clase energetice similare (A++ / A+), dar Daikin tinde sa fie putin mai eficient datorita componentelor si tehnologiei superioare. Un aparat de 12000 BTU inverter consuma intre 0.7 - 1.2 kWh la racire, in functie de model si conditii.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Ce model de aer conditionat e mai bun pentru un apartament de 2 camere?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Pentru un apartament de 2 camere, cu suprafete de pana la 30 mp per camera, un aparat de 12000 BTU este, in general, suficient. Modele ca Gree Bora sau Daikin Sensira sunt optiuni bune, in functie de buget.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Daikin sau Gree, care se strica mai repede?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Daikin are o reputatie mai buna pentru durabilitate pe termen lung, datorita calitatii constructiei si a componentelor folosite. Modelele Gree sunt, de asemenea, fiabile, dar pot avea o durata de viata putin mai scurta comparativ cu cele premium.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Merita sa iau un aer conditionat 9000 BTU sau 12000 BTU?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Un aparat de 9000 BTU este recomandat pentru spatii de pana la 20 mp (garsoniere, dormitoare). Pentru spatii intre 20-30 mp (livinguri, apartamente cu 2 camere), 12000 BTU este alegerea potrivita. Alegerea incorecta poate duce la consum mare sau climatizare ineficienta.
+                </div>
+              </div>
+          </div>
+
+          <PrevNextNav currentSlug="daikin-vs-gree-care-e-mai-bun" />
+
+        </div>
+      </div>
+    </div>
+
+    <SimilarArticles
+      currentSlug="daikin-vs-gree-care-e-mai-bun"
+      category="Comparatii Modele"
+      categorySlug="comparatii-modele"
+    />
+  </article>
+
+  <script>
+    // Table scroll detection
+    (function() {
+      const outer = document.querySelector('[data-table-wrap]');
+      if (!outer) return;
+      const scroll = outer.querySelector('[data-table-scroll]');
+      function check() {
+        if (scroll.scrollWidth > scroll.clientWidth) {
+          outer.classList.add('can-scroll');
+        } else {
+          outer.classList.remove('can-scroll');
+        }
+        if (scroll.scrollLeft + scroll.clientWidth >= scroll.scrollWidth - 2) {
+          outer.classList.remove('can-scroll');
+        }
+      }
+      check();
+      scroll.addEventListener('scroll', check);
+      window.addEventListener('resize', check);
+    })();
+
+    // Outline tracking
+    (function() {
+      const links = document.querySelectorAll('#sideOutline a, #mobileOutline a');
+      const secs = [];
+      links.forEach(link => {
+        const id = link.getAttribute('href')?.replace('#', '');
+        const el = id && document.getElementById(id);
+        if (el) secs.push({ el, link });
+      });
+      if (!secs.length) return;
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const m = secs.find(s => s.el === entry.target);
+          if (m && entry.isIntersecting) {
+            links.forEach(l => l.parentElement?.classList.remove('is-active'));
+            m.link.parentElement?.classList.add('is-active');
+            links.forEach(l => {
+              if (l !== m.link && l.getAttribute('href') === m.link.getAttribute('href')) {
+                l.parentElement?.classList.add('is-active');
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-72px 0px -60% 0px' });
+      secs.forEach(s => obs.observe(s.el));
+    })();
+  </script>
+</Layout>
