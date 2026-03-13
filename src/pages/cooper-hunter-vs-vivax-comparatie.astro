@@ -1,0 +1,431 @@
+---
+export const frontmatter = {
+  title: "Cooper Hunter Vs Vivax Comparatie",
+  slug: "cooper-hunter-vs-vivax-comparatie",
+  category: "Comparatii Modele",
+  categorySlug: "comparatii-modele",
+  excerpt: "Cautati sa comparati Cooper&Hunter cu Vivax pentru aer conditionat? Un model Cooper&Hunter Aurora 12000 BTU poate fi gasit incepand de la 2.300 lei, iar un Vivax 12000 BTU din seria ACP-12CH35AEQI este disponibil pentru aproximativ 1.800 lei. Alegerea depinde de prioritatile dumneavoastra: performanta superioara si fiabilitate pe termen lung pentru Cooper&Hunter, sau un pret mai accesibil pentru Vivax.",
+  image: "/images/articles/cooper-hunter-vs-vivax-comparatie.webp",
+  publishDate: "2026-03-13T16:44:09.002Z",
+  modifiedDate: "2026-03-13T16:44:09.002Z",
+  author: "Andrei Petrescu"
+};
+
+import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  excerpt: item.excerpt || '',
+  image: `/images/articles/${item.keyword.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}.webp`,
+  date: item.date || new Date().toISOString()
+}));
+---
+
+<Layout
+  title={`${frontmatter.title} | AerConditionatOferte.ro`}
+  description={frontmatter.excerpt}
+  canonical={`/${frontmatter.slug}/`}
+  type="article"
+  image={frontmatter.image}
+  author={frontmatter.author}
+  publishedTime={frontmatter.publishDate}
+  modifiedTime={frontmatter.modifiedDate}
+  faqSchema={{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Cat costa un aer conditionat Cooper&Hunter 12000 BTU?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un model Cooper&Hunter de 12000 BTU, precum Aurora sau Supreme, costa intre 2.300 lei si 2.800 lei in 2026. Pretul variaza in functie de clasa energetica si functiile suplimentare."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ce diferenta de pret este intre Cooper&Hunter si Vivax 12000 BTU?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vivax ofera modele de 12000 BTU la preturi mai accesibile, incepand de la 1.500 lei (on-off) sau 1.800 lei (inverter). Cooper&Hunter, fiind un brand cu performante superioare, are preturi intre 2.300 si 2.800 lei pentru modele similare."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cat consuma un aer conditionat Vivax 12000 BTU Inverter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un Vivax 12000 BTU Inverter consuma in medie intre 0.8 si 1.2 kWh la racire, in functie de temperatura exterioara si setari. Clasa energetica A++ contribuie la acest consum redus."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Care este cel mai bun aer conditionat 12000 BTU: Cooper&Hunter sau Vivax?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pentru performanta, eficienta energetica si silentiozitate, Cooper&Hunter Supreme este superior. Pentru un echilibru bun intre pret si performanta Inverter, Cooper&Hunter Aurora este o alegere buna. Vivax ofera optiuni mai accesibile, potrivite pentru bugete restranse."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ce probleme pot aparea la un aer conditionat Cooper&Hunter sau Vivax?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Principalele probleme pot fi legate de instalarea incorecta, lipsa mentenantei periodice (curatarea filtrelor, verificarea nivelului de refrigerant) sau utilizarea intensiva a modelelor entry-level. Modelele Inverter, in general, au mai putine probleme de fiabilitate."
+        }
+      }
+    ]
+  }}
+  breadcrumbs={[
+    { name: "Acasa", url: "/" },
+    { name: "Comparatii Modele", url: "/comparatii-modele/" },
+    { name: "Cooper Hunter Vs Vivax Comparatie", url: "/cooper-hunter-vs-vivax-comparatie/" }
+  ]}
+>
+  <article>
+    <header data-article-hdr>
+      <div data-shell>
+        <div data-article-hdr-inner>
+          <nav data-breadcrumb>
+            <a href="/">Acasa</a>
+            <span>/</span>
+            <a href={`/${frontmatter.categorySlug}/`}>{frontmatter.category}</a>
+            <span>/</span>
+            <span>{frontmatter.title}</span>
+          </nav>
+          <h1>{frontmatter.title}</h1>
+          <div data-article-meta>
+            <span>{frontmatter.author}</span>
+            <span>&bull;</span>
+            <time datetime={frontmatter.publishDate}>{new Date(frontmatter.publishDate).toLocaleDateString('ro-RO', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div data-shell>
+      <div data-article-body>
+        <div data-content>
+        <img src="/images/articles/cooper-hunter-vs-vivax-comparatie.webp" alt="Cooper Hunter Vs Vivax Comparatie" data-entry-img width="800" height="600" loading="eager" decoding="async" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;" />
+
+        <div data-toc-mobile id="mobileOutline">
+          <button onclick="document.getElementById('mobileOutline').classList.toggle('is-open')">
+            <span>Cuprins</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul>
+            <li><a href="#cooper-hunter-aurora-12000-btu-model-2026">Cooper&Hunter Aurora 12000 BTU (Model 2026)</a></li>
+            <li><a href="#vivax-acp-12ch35aeqi-12000-btu">Vivax ACP-12CH35AEQI 12000 BTU</a></li>
+            <li><a href="#cooper-hunter-supreme-12000-btu-model-2026">Cooper&Hunter Supreme 12000 BTU (Model 2026)</a></li>
+            <li><a href="#vivax-acp-12ct35aeri-12000-btu">Vivax ACP-12CT35AERI 12000 BTU</a></li>
+            <li><a href="#comparatie">Cooper Hunter vs Vivax: Ce alegi?</a></li>
+            <li><a href="#ghid">Cum alegi intre Cooper&Hunter si Vivax?</a></li>
+            <li><a href="#faq">Intrebari frecvente</a></li>
+          </ul>
+        </div>
+
+        <section id="intro">
+          <p>Cautati sa comparati Cooper&Hunter cu Vivax pentru aer conditionat? Un model Cooper&Hunter Aurora 12000 BTU poate fi gasit incepand de la 2.300 lei, iar un Vivax 12000 BTU din seria ACP-12CH35AEQI este disponibil pentru aproximativ 1.800 lei. Alegerea depinde de prioritatile dumneavoastra: performanta superioara si fiabilitate pe termen lung pentru Cooper&Hunter, sau un pret mai accesibil pentru Vivax.</p><p>Aceste doua branduri e pentru unor nevoi similare, insa cu diferente notabile la capitolul tehnologie si constructie. Daca aveti un spatiu de pana la 35 mp si cautati o varianta buna, ambele pot fi luate in calcul. Totusi, daca bugetul este restrans, Vivax poate fi o optiune. Daca va doriti o unitate mai silentioasa si cu un sistem de filtrare mai avansat, Cooper&Hunter ar putea fi alegerea potrivita.</p><p>In acest articol, vom analiza specificatiile, performantele si preturile principalelor modele pentru a va ajuta sa decideti ce se potriveste cel mai bine casei dumneavoastra.</p>
+        </section>
+
+          <h2>Cooper Hunter Vs Vivax Comparatie</h2>
+          
+          <article id="cooper-hunter-aurora-12000-btu-model-2026" data-review>
+            <div data-review-bar>
+              <h3>Cooper&Hunter Aurora 12000 BTU (Model 2026)</h3>
+              <span data-review-tag>Raport Calitate-Pret</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 20 dB(A) interior / 48 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 780 x 275 x 200 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Cooper&Hunter Aurora 12000 BTU este o unitate care isi propune sa ofere un echilibru bun intre performanta si pret. Este un model cu compresor inverter, ceea ce inseamna ca ajusteaza continuu capacitatea de racire sau incalzire pentru a mentine temperatura dorita, economisind astfel energie.</p><p>Ce performante ofera compresorul inverter? Acest tip de compresor permite o functionare mai eficienta, atingand rapid temperatura setata si mentinand-o constant, fara fluctuatii mari. Consumul de energie este redus cu pana la 30-40% fata de modelele clasice on-off, ceea ce inseamna facturi mai mici la electricitate.</p><p>Cat de silentios este in functionare? Un nivel de zgomot de 20 dB(A) pentru unitatea interioara este foarte bun, comparabil cu un foșnet de frunze. Asta il face potrivit pentru dormitoare sau camere unde linistea conteaza. Unitatea exterioara are un nivel de zgomot de 48 dB(A), standard pentru acest tip de echipament.</p><p>Merita diferenta de pret fata de modelele mai ieftine? Cooper&Hunter plaseaza Aurora in segmentul mediu, oferind tehnologie inverter si o clasa energetica superioara. Daca vreti o unitate care sa reziste in timp si sa functioneze optim, investitia suplimentara se poate justifica prin costuri de operare mai mici si o durata de viata mai mare.</p><p>Ce refrigerant utilizeaza? Modelul Aurora foloseste R32, un refrigerant modern, mai ecologic si mai eficient decat R410A. Acesta are un impact redus asupra stratului de ozon si un potential de incalzire globala mai mic.</p><p>Ce spatiu poate acoperi? Cu o capacitate de 12000 BTU, acest aparat este ideal pentru incaperi cu o suprafata de pana la 35 mp, cum ar fi un living mediu sau un dormitor spatios. Asigurati-va ca dimensionati corect aparatul pentru a nu forta compresorul.</p><p>Pentru cine este potrivit acest model? Cooper&Hunter Aurora 12000 BTU este o alegere buna pentru cei care cauta un aparat de aer conditionat fiabil, eficient energetic si silentios, pentru o locuinta de dimensiuni medii. Este un model care raspunde nevoilor de confort si economiei, fara a compromite calitatea constructiei.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Compresor inverter pentru eficienta energetica</li>
+                  <li>Nivel de zgomot foarte redus (20 dB(A) interior)</li>
+                  <li>Utilizeaza refrigerant R32, mai ecologic</li>
+                  <li>Clasa energetica superioara (A++)</li>
+                  <li>Filtrare imbunatatita pentru aer mai curat</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Pretul este mai ridicat decat al unor modele Vivax</li>
+                  <li>Functiile smart (Wi-Fi) pot lipsi pe anumite sub-variante</li>
+                  <li>Disponibilitatea pieselor de schimb pe termen foarte lung ar putea fi o grija pentru unii</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="vivax-acp-12ch35aeqi-12000-btu" data-review>
+            <div data-review-bar>
+              <h3>Vivax ACP-12CH35AEQI 12000 BTU</h3>
+              <span data-review-tag>Pentru Buget Mic</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 24 dB(A) interior / 54 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 777 x 250 x 201 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Vivax ACP-12CH35AEQI 12000 BTU este o optiune accesibila pentru cei care cauta un aparat de aer conditionat cu tehnologie inverter. Este un model destinat spatiilor de dimensiuni medii, oferind racire si incalzire la un pret competitiv pe piata din Romania.</p><p>Ce performante ofera compresorul inverter? Similar altor modele inverter, si acest Vivax ajusteaza puterea pentru a mentine temperatura dorita, ceea ce duce la un consum mai mic de energie comparativ cu sistemele on-off. Nu te poti astepta la aceeasi precizie ca la brandurile premium, dar diferenta fata de cele clasice este notabila.</p><p>Cat de silentios este in functionare? Cu un nivel de zgomot de 24 dB(A) pentru unitatea interioara, este putin mai zgomotos decat un model Cooper&Hunter de top, dar totusi se incadreaza in limitele acceptabile pentru majoritatea utilizatorilor. Pentru un dormitor, ar putea fi la limita confortului pentru persoanele foarte sensibile la zgomot.</p><p>Merita diferenta de pret fata de modelele mai ieftine? Vivax se concentreaza pe a oferi functii esentiale la un pret bun. Daca bugetul este principala ta preocupare, acest model ofera tehnologia inverter si o clasa energetica decenta, fara costuri suplimentare pentru brand sau functii avansate.</p><p>Ce refrigerant utilizeaza? Aparatul foloseste refrigerant R32, o alegere moderna si eficienta, care respecta normele de mediu actuale. Acest aspect este un plus pentru un model din aceasta categorie de pret.</p><p>Ce spatiu poate acoperi? Capacitatea de 12000 BTU il face potrivit pentru o suprafata de pana la 35 mp. Este important sa nu suprafolicitati aparatul, alegand dimensiunea corecta pentru camera in care va fi instalat.</p><p>Pentru cine este potrivit acest model? Vivax ACP-12CH35AEQI este o varianta pentru cei cu un buget limitat, care doresc un aparat de aer conditionat cu compresor inverter pentru a reduce consumul de energie. Este o solutie practica pentru apartamente sau case unde nu se cauta neaparat performante de top, ci functionalitate la un pret bun.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Pret foarte accesibil</li>
+                  <li>Tehnologie inverter pentru economie de energie</li>
+                  <li>Utilizeaza refrigerant R32</li>
+                  <li>Clasa energetica decenta (A++)</li>
+                  <li>Dimensiuni compacte ale unitatii interioare</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Nivel de zgomot putin mai ridicat (24 dB(A))</li>
+                  <li>Calitatea materialelor poate fi inferioara brandurilor premium</li>
+                  <li>Durata de viata posibila mai scurta comparativ cu modelele mai scumpe</li>
+                  <li>Functii de filtrare mai simple</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="cooper-hunter-supreme-12000-btu-model-2026" data-review>
+            <div data-review-bar>
+              <h3>Cooper&Hunter Supreme 12000 BTU (Model 2026)</h3>
+              <span data-review-tag>Performanta Top</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A+++ racire / A++ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 19 dB(A) interior / 47 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter (Generatie noua)</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 790 x 275 x 200 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Cooper&Hunter Supreme 12000 BTU reprezinta varful de gama al brandului, oferind performante si tehnologii superioare. Acest model este destinat celor care cauta cea mai buna eficienta energetica, un nivel de zgomot minim si functii avansate.</p><p>Ce performante ofera compresorul inverter de generatie noua? Acest tip de compresor este optimizat pentru un consum de energie extrem de redus, chiar si la temperaturi exterioare foarte scazute sau ridicate. Clasa energetica A+++ la racire si A++ la incalzire confirma acest lucru, traducandu-se in economii semnificative pe termen lung.</p><p>Cat de silentios este in functionare? Cu un nivel de zgomot de doar 19 dB(A) la unitatea interioara, acest model este unul dintre cele mai silentioase de pe piata. Este perfect pentru dormitoare, camere de copii sau birouri unde linistea este prioritara. Nici unitatea exterioara nu este zgomotoasa, avand 47 dB(A).</p><p>Merita diferenta de pret fata de modelele mai ieftine? Daca se cauta performanta maxima, eficienta energetica de top si un confort sporit, atunci investitia in modelul Supreme se justifica. Beneficiile includ costuri de operare reduse, o durata de viata extinsa si o experienta de utilizare superioara.</p><p>Ce refrigerant utilizeaza? Modelul Supreme folosește refrigerant R32, o alegere ecologica și performantă, care ajuta la eficiența generală a aparatului.</p><p>Ce spatiu poate acoperi? Capacitatea de 12000 BTU este potrivita pentru spatii de pana la 35 mp. Datorita tehnologiei avansate, isi mentine eficienta chiar si in conditii extreme de temperatura.</p><p>Pentru cine este potrivit acest model? Cooper&Hunter Supreme 12000 BTU este ideal pentru utilizatorii exigenți, care doresc un aparat de aer conditionat de cea mai bună calitate, cu un consum minim de energie, funcționare ultra-silentioasă și performanțe garantate pe termen lung. Este o investiție în confort și economie.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Clasa energetica de top (A+++ racire / A++ incalzire)</li>
+                  <li>Nivel de zgomot extrem de redus (19 dB(A) interior)</li>
+                  <li>Compresor inverter de ultima generatie</li>
+                  <li>Functii smart integrate (Wi-Fi control)</li>
+                  <li>Performanta excelenta chiar si la temperaturi extreme</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Pretul este cel mai ridicat dintre modelele analizate</li>
+                  <li>Necesita o instalare corecta pentru a beneficia de toate avantajele</li>
+                  <li>Interfata Wi-Fi poate necesita o aplicatie dedicata</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="vivax-acp-12ct35aeri-12000-btu" data-review>
+            <div data-review-bar>
+              <h3>Vivax ACP-12CT35AERI 12000 BTU</h3>
+              <span data-review-tag>Cel Mai Bun Pret</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A+ racire / A incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 25 dB(A) interior / 55 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> On-Off</span>
+              <span data-spec><strong>refrigerant:</strong> R410A</span>
+              <span data-spec><strong>dimensiuni:</strong> 792 x 291 x 201 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Vivax ACP-12CT35AERI 12000 BTU este un model clasic cu compresor on-off, destinat celor cu un buget foarte restrans. Acesta ofera functionalitati de baza pentru racire si incalzire, dar cu un consum de energie mai mare comparativ cu modelele inverter.</p><p>Ce performante ofera compresorul on-off? Acest tip de compresor functioneaza la capacitate maxima pana cand temperatura dorita este atinsa, apoi se opreste complet. Ulterior, reporneste la capacitate maxima cand temperatura creste sau scade din nou. Aceasta metoda duce la fluctuatii de temperatura si un consum de energie mai ridicat.</p><p>Cat de silentios este in functionare? Cu 25 dB(A) la unitatea interioara, este putin mai zgomotos decat modelele inverter, dar inca acceptabil pentru spatii de zi sau birouri. Totusi, pentru dormitoare, poate fi deranjant pentru persoanele sensibile.</p><p>Merita diferenta de pret fata de modelele mai ieftine? Acest model este, de fapt, printre cele mai ieftine optiuni. Diferenta fata de un Vivax inverter este semnificativa la pret, dar se reflecta in consumul de energie si confortul termic. Daca il folositi ocazional, poate fi o solutie.</p><p>Ce refrigerant utilizeaza? Foloseste refrigerant R410A, un agent frigorific mai vechi, care este inlocuit treptat de R32 din motive de mediu. Nu este la fel de eficient energetic ca R32.</p><p>Ce spatiu poate acoperi? Capacitatea de 12000 BTU este potrivita pentru incaperi de pana la 35 mp. Totusi, datorita tehnologiei on-off, eficienta maxima se obtine in spatii mai mici sau daca utilizarea este intermitenta.</p><p>Pentru cine este potrivit acest model? Vivax ACP-12CT35AERI este destinat celor cu un buget foarte limitat, care au nevoie de un aparat de aer conditionat pentru utilizare ocazionala sau in spatii unde consumul de energie nu este o prioritate majora. Nu este recomandat pentru utilizare intensiva sau pentru cei care cauta eficienta energetica.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Cel mai mic pret de pe piata</li>
+                  <li>Functionare de baza pentru racire si incalzire</li>
+                  <li>Disponibil imediat in majoritatea magazinelor</li>
+                  <li>Simplu de utilizat</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Consum energetic ridicat datorita compresorului on-off</li>
+                  <li>Nivel de zgomot mai mare comparativ cu modelele inverter</li>
+                  <li>Utilizeaza refrigerant R410A, mai putin ecologic</li>
+                  <li>Clasa energetica inferioara (A+/A)</li>
+                  <li>Nu ofera functii smart sau avansate</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          
+          <section id="comparatie">
+            <h2>Cooper Hunter vs Vivax: Ce alegi?</h2>
+            <div data-comparison>
+              <table>
+                <thead><tr><th>Model</th><th>Capacitate</th><th>Clasa energetica</th><th>Zgomot</th><th>Pret</th><th>Potrivit pentru</th></tr></thead>
+                <tbody>
+              <tr><td>Cooper&Hunter Aurora 12000 BTU</td><td>12000 BTU</td><td>A++ / A+</td><td>20 dB(A)</td><td>2.300 lei</td><td>Spatii pana la 35 mp, utilizare frecventa, confort si economie</td></tr>
+              <tr><td>Vivax ACP-12CH35AEQI 12000 BTU</td><td>12000 BTU</td><td>A++ / A+</td><td>24 dB(A)</td><td>1.800 lei</td><td>Spatii pana la 35 mp, buget restrans, utilizare moderata</td></tr>
+              <tr><td>Cooper&Hunter Supreme 12000 BTU</td><td>12000 BTU</td><td>A+++ / A++</td><td>19 dB(A)</td><td>2.800 lei</td><td>Spatii pana la 35 mp, utilizare intensiva, performanta maxima si eficienta top</td></tr>
+              <tr><td>Vivax ACP-12CT35AERI 12000 BTU</td><td>12000 BTU</td><td>A+ / A</td><td>25 dB(A)</td><td>1.500 lei</td><td>Spatii pana la 35 mp, utilizare ocazionala, buget minim</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          
+          <section id="ghid">
+            <h2>Cum alegi intre Cooper&Hunter si Vivax?</h2>
+            <div data-guide>
+              <p>Alegerea intre Cooper&Hunter si Vivax depinde de nevoile si bugetul tau. Ambele branduri ofera modele de 12000 BTU potrivite pentru spatii de pana la 35 mp, dar cu diferente clare la capitolul performanta si pret.</p><h4>Ce diferenta este intre compresorul Inverter si On-Off?</h4><p>Compresorul Inverter este tehnologia moderna. Acesta isi ajusteaza continuu turatia pentru a mentine temperatura constanta, ceea ce duce la un consum de energie mai mic, functionare mai silentioasa si o durata de viata mai lunga a aparatului. Modelele Vivax ACP-12CH35AEQI si ambele modele Cooper&Hunter folosesc tehnologia Inverter.</p><p>Compresorul On-Off functioneaza la capacitate maxima sau este oprit. Aceasta duce la fluctuatii de temperatura, un consum mai mare de energie si o uzura mai rapida. Modelul Vivax ACP-12CT35AERI este un exemplu de aparat cu compresor On-Off.</p><h4>Cum influenteaza clasa energetica decizia?</h4><p>Clasa energetica indica eficienta aparatului. Un aparat cu clasa A+++ (precum Cooper&Hunter Supreme) va consuma semnificativ mai putin curent decat unul cu clasa A+ sau A (precum Vivax ACP-12CT35AERI). Pe termen lung, acest lucru inseamna economii la factura de electricitate. Modelele Inverter au, in general, clase energetice superioare.</p><h4>Ce rol joaca nivelul de zgomot?</h4><p>Nivelul de zgomot, masurat in decibeli (dB), este important mai ales pentru dormitoare sau spatii de lucru. Un aparat cu 19-20 dB(A) (precum Cooper&Hunter Supreme/Aurora) este aproape inaudibil. Un aparat cu 24-25 dB(A) (precum Vivax) este perceptibil, dar in limite normale. Daca sensibilitatea la zgomot este ridicata, merita sa investesti intr-un model mai silentios.</p><h4>Ce inseamna refrigerantul R32 vs R410A?</h4><p>Refrigerantul R32 este noul standard. Este mai eficient energetic, are un impact mai mic asupra mediului (potențial de incalzire globală mai redus) si permite aparatelor sa atinga performante mai bune. R410A este un refrigerant mai vechi, folosit in modelele on-off sau mai vechi. Majoritatea modelelor Inverter, inclusiv cele de la Cooper&Hunter si Vivax ACP-12CH35AEQI, folosesc R32.</p><p>daca bugetul permite, alegeti un model Inverter Cooper&Hunter pentru eficienta, silentiozitate si fiabilitate. Daca bugetul este foarte strans, un Vivax Inverter (ACP-12CH35AEQI) este o alternativa decenta. Evitati modelele On-Off (Vivax ACP-12CT35AERI) daca vreti sa economisiti la curent si sa beneficiati de confort.</p>
+            </div>
+          </section>
+
+          <div data-faq>
+            <h2>Intrebari frecvente</h2>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Cat costa un aer conditionat Cooper&Hunter 12000 BTU?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Un model Cooper&Hunter de 12000 BTU, precum Aurora sau Supreme, costa intre 2.300 lei si 2.800 lei in 2026. Pretul variaza in functie de clasa energetica si functiile suplimentare.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Ce diferenta de pret este intre Cooper&Hunter si Vivax 12000 BTU?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Vivax ofera modele de 12000 BTU la preturi mai accesibile, incepand de la 1.500 lei (on-off) sau 1.800 lei (inverter). Cooper&Hunter, fiind un brand cu performante superioare, are preturi intre 2.300 si 2.800 lei pentru modele similare.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Cat consuma un aer conditionat Vivax 12000 BTU Inverter?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Un Vivax 12000 BTU Inverter consuma in medie intre 0.8 si 1.2 kWh la racire, in functie de temperatura exterioara si setari. Clasa energetica A++ contribuie la acest consum redus.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Care este cel mai bun aer conditionat 12000 BTU: Cooper&Hunter sau Vivax?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Pentru performanta, eficienta energetica si silentiozitate, Cooper&Hunter Supreme este superior. Pentru un echilibru bun intre pret si performanta Inverter, Cooper&Hunter Aurora este o alegere buna. Vivax ofera optiuni mai accesibile, potrivite pentru bugete restranse.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Ce probleme pot aparea la un aer conditionat Cooper&Hunter sau Vivax?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Principalele probleme pot fi legate de instalarea incorecta, lipsa mentenantei periodice (curatarea filtrelor, verificarea nivelului de refrigerant) sau utilizarea intensiva a modelelor entry-level. Modelele Inverter, in general, au mai putine probleme de fiabilitate.
+                </div>
+              </div>
+          </div>
+
+          <PrevNextNav currentSlug="cooper-hunter-vs-vivax-comparatie" />
+
+        </div>
+      </div>
+    </div>
+
+    <SimilarArticles
+      currentSlug="cooper-hunter-vs-vivax-comparatie"
+      category="Comparatii Modele"
+      categorySlug="comparatii-modele"
+    />
+  </article>
+
+  <script>
+    // Table scroll detection
+    (function() {
+      const outer = document.querySelector('[data-table-wrap]');
+      if (!outer) return;
+      const scroll = outer.querySelector('[data-table-scroll]');
+      function check() {
+        if (scroll.scrollWidth > scroll.clientWidth) {
+          outer.classList.add('can-scroll');
+        } else {
+          outer.classList.remove('can-scroll');
+        }
+        if (scroll.scrollLeft + scroll.clientWidth >= scroll.scrollWidth - 2) {
+          outer.classList.remove('can-scroll');
+        }
+      }
+      check();
+      scroll.addEventListener('scroll', check);
+      window.addEventListener('resize', check);
+    })();
+
+    // Outline tracking
+    (function() {
+      const links = document.querySelectorAll('#sideOutline a, #mobileOutline a');
+      const secs = [];
+      links.forEach(link => {
+        const id = link.getAttribute('href')?.replace('#', '');
+        const el = id && document.getElementById(id);
+        if (el) secs.push({ el, link });
+      });
+      if (!secs.length) return;
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const m = secs.find(s => s.el === entry.target);
+          if (m && entry.isIntersecting) {
+            links.forEach(l => l.parentElement?.classList.remove('is-active'));
+            m.link.parentElement?.classList.add('is-active');
+            links.forEach(l => {
+              if (l !== m.link && l.getAttribute('href') === m.link.getAttribute('href')) {
+                l.parentElement?.classList.add('is-active');
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-72px 0px -60% 0px' });
+      secs.forEach(s => obs.observe(s.el));
+    })();
+  </script>
+</Layout>
