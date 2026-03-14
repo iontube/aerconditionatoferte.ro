@@ -1,0 +1,465 @@
+---
+export const frontmatter = {
+  title: "Aer Conditionat Inverter Vs Non Inverter",
+  slug: "aer-conditionat-inverter-vs-non-inverter",
+  category: "Comparatii Modele",
+  categorySlug: "comparatii-modele",
+  excerpt: "Aer conditionat inverter vs non inverter: ce tehnologie alegi pentru confort si economie?",
+  image: "/images/articles/aer-conditionat-inverter-vs-non-inverter.webp",
+  publishDate: "2026-03-14T16:36:05.808Z",
+  modifiedDate: "2026-03-14T16:36:05.808Z",
+  author: "Andrei Petrescu"
+};
+
+import Layout from '../layouts/Layout.astro';
+import PrevNextNav from '../components/PrevNextNav.astro';
+import SimilarArticles from '../components/SimilarArticles.astro';
+import keywordsData from '../../keywords.json';
+
+const allArticles = (keywordsData.completed || []).map(item => ({
+  title: item.keyword.charAt(0).toUpperCase() + item.keyword.slice(1),
+  slug: item.keyword.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''),
+  category: item.category,
+  categorySlug: item.categorySlug,
+  excerpt: item.excerpt || '',
+  image: `/images/articles/${item.keyword.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}.webp`,
+  date: item.date || new Date().toISOString()
+}));
+---
+
+<Layout
+  title={`${frontmatter.title} | AerConditionatOferte.ro`}
+  description={frontmatter.excerpt}
+  canonical={`/${frontmatter.slug}/`}
+  type="article"
+  image={frontmatter.image}
+  author={frontmatter.author}
+  publishedTime={frontmatter.publishDate}
+  modifiedTime={frontmatter.modifiedDate}
+  faqSchema={{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Aer conditionat inverter sau non inverter, ce consuma mai putin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aerul conditionat cu tehnologie inverter consuma semnificativ mai putin curent, cu pana la 40% mai putin decat un aparat non-inverter. Acest lucru se datoreaza modului in care compresorul isi ajusteaza turatia pentru a mentine temperatura dorita, evitand ciclurile de pornire/oprire."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cat costa un aer conditionat inverter bun?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un aparat de aer conditionat inverter bun, cu o capacitate de 12000 BTU, costa in Romania in 2026 intre 2.000 si 4.500 lei. Modelele premium cu functii avansate pot depasi aceasta suma."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Care e diferenta principala intre inverter si non inverter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Diferenta principala sta in modul de functionare al compresorului. Inverterul isi regleaza turatia continuu, mentinand temperatura constanta si economisind energie. Non-inverterul functioneaza la capacitate maxima sau este oprit, generand fluctuatii termice si un consum mai mare."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Am nevoie de inverter daca folosesc aerul conditionat doar ocazional?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Daca folosesti aparatul doar ocazional, pentru perioade scurte de timp (cateva ore pe saptamana), un aparat non-inverter ar putea fi suficient si mai avantajos din punct de vedere al costului initial. Pentru utilizare frecventa, inverterul este recomandat."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ce se intampla daca aleg un aparat non-inverter si am o camera mare?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Daca alegi un aparat non-inverter pentru o camera mare, acesta va consuma foarte mult curent incercand sa atinga si sa mentina temperatura dorita. De asemenea, vei resimti fluctuatii de temperatura mai mari si confortul va fi diminuat."
+        }
+      }
+    ]
+  }}
+  breadcrumbs={[
+    { name: "Acasa", url: "/" },
+    { name: "Comparatii Modele", url: "/comparatii-modele/" },
+    { name: "Aer Conditionat Inverter Vs Non Inverter", url: "/aer-conditionat-inverter-vs-non-inverter/" }
+  ]}
+>
+  <article>
+    <header data-article-hdr>
+      <div data-shell>
+        <div data-article-hdr-inner>
+          <nav data-breadcrumb>
+            <a href="/">Acasa</a>
+            <span>/</span>
+            <a href={`/${frontmatter.categorySlug}/`}>{frontmatter.category}</a>
+            <span>/</span>
+            <span>{frontmatter.title}</span>
+          </nav>
+          <h1>{frontmatter.title}</h1>
+          <div data-article-meta>
+            <span>{frontmatter.author}</span>
+            <span>&bull;</span>
+            <time datetime={frontmatter.publishDate}>{new Date(frontmatter.publishDate).toLocaleDateString('ro-RO', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div data-shell>
+      <div data-article-body>
+        <div data-content>
+        <img src="/images/articles/aer-conditionat-inverter-vs-non-inverter.webp" alt="Aer Conditionat Inverter Vs Non Inverter" data-entry-img width="800" height="600" loading="eager" decoding="async" style="width:100%;height:auto;border-radius:12px;margin-bottom:24px;" />
+
+        <div data-toc-mobile id="mobileOutline">
+          <button onclick="document.getElementById('mobileOutline').classList.toggle('is-open')">
+            <span>Cuprins</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <ul>
+            <li><a href="#daikin-sensira-ftxf35a-rxf35a">Daikin Sensira FTXF35A/RXF35A</a></li>
+            <li><a href="#gree-bora-gwh12acbxa-k6dna1a">Gree Bora GWH12ACBXA-K6DNA1A</a></li>
+            <li><a href="#lg-dualcool-a12ft">LG DualCool A12FT</a></li>
+            <li><a href="#mitsubishi-electric-msz-ln25vgw-muz-ln25vg-kirigamine-style">Mitsubishi Electric MSZ-LN25VGW/MUZ-LN25VG (Kirigamine Style)</a></li>
+            <li><a href="#samsung-windfree-ar12txhqasineu-xeu">Samsung WindFree AR12TXHQASINEU/XEU</a></li>
+            <li><a href="#comparatie">Aer conditionat inverter vs non inverter: Diferente cheie</a></li>
+            <li><a href="#ghid">Cum alegi intre aer conditionat inverter si non inverter?</a></li>
+            <li><a href="#faq">Intrebari frecvente</a></li>
+          </ul>
+        </div>
+
+        <section id="intro">
+          <p><strong>Aer conditionat inverter vs non inverter</strong>: ce tehnologie alegi pentru confort si economie?</p><p>Un aparat de aer conditionat cu tehnologie inverter consuma cu pana la 40% mai putin curent decat unul non-inverter, mentinand in acelasi timp o temperatura constanta in incapere. De exemplu, modelul LG DualCool A12FT, cu inverter, costa in jur de 2.500 lei si ofera o capacitate de 12000 BTU, fiind o optiune populara pentru apartamente medii.</p><p>Daca locuinta ta nu este supusa unor fluctuatii mari de temperatura sau daca bugetul este principala ta grija, un aparat non-inverter poate fi suficient. Totusi, pentru un confort sporit si facturi mai mici pe termen lung, tehnologia inverter este standard in prezent.</p><p>Acest articol te ajuta sa intelegi diferentele fundamentale dintre cele doua tipuri de tehnologii, sa analizezi specificatiile cheie si sa faci o alegere informata.</p>
+        </section>
+
+          <h2>Aer Conditionat Inverter Vs Non Inverter</h2>
+          
+          <article id="daikin-sensira-ftxf35a-rxf35a" data-review>
+            <div data-review-bar>
+              <h3>Daikin Sensira FTXF35A/RXF35A</h3>
+              <span data-review-tag>Raport Calitate-Pret</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 21 dB(A) interior / 48 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 770 x 285 x 225 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Cand vine vorba de confort termic, Daikin Sensira FTXF35A/RXF35A este o optiune echilibrata pentru apartamente si case medii. Cu o capacitate de 12000 BTU, acest model inverter promite sa mentina o temperatura placuta atat vara, cat si iarna.</p><p>Ce performante ofera compresorul inverter?</p><p>Compresorul inverter ajusteaza automat turatia pentru a mentine temperatura dorita, evitand pornirile si opririle bruste specifice aparatelor non-inverter. Acest lucru se traduce printr-un consum de energie mai mic cu pana la 30% si un nivel de zgomot redus. Daikin Sensira functioneaza la un nivel de 21 dB(A) in modul silentios, comparabil cu un susur.</p><p>Cat de eficient este pe termen lung?</p><p>Clasa energetica A++ la racire si A+ la incalzire, impreuna cu refrigerantul R32, spun povestea eficientei. Platesti mai putin la curent, iar impactul asupra mediului este redus. Dimensiunile compacte ale unitatii interioare permit o integrare usoara in majoritatea spatiilor.</p><p>Merita diferenta de pret fata de modelele mai ieftine?</p><p>Pretul sau, in jur de 2.800 lei, il plaseaza in segmentul mid-range. Daca locuiesti intr-un apartament sau casa unde vei folosi aparatul des, economiile la factura de curent vor amortiza investitia initiala intr-un timp rezonabil. Durabilitatea brandului Daikin este un alt factor de luat in calcul.</p><p>Este suficient de puternic pentru o camera mare?</p><p>Cu 12000 BTU, acest model este ideal pentru incaperi de pana la 35 mp. Pentru livinguri mai mari sau spatii open-space, ar fi necesar un aparat cu o capacitate mai mare, de 18000 BTU sau chiar 24000 BTU. Verifica <a href="/aer-conditionat-12000-btu-pret/">aer conditionat 12000 btu pret</a> pentru a vedea optiuni.</p><p>Pentru cine este potrivit acest model?</p><p>Daikin Sensira FTXF35A/RXF35A este o alegere potrivita pentru cei care cauta un echilibru intre performanta, eficienta energetica si fiabilitatea unui brand consacrat. Este ideal pentru apartamente de 2-3 camere sau case unde se doreste un confort termic constant, cu un consum redus de energie.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Consum redus de energie datorita tehnologiei inverter</li>
+                  <li>Nivel de zgomot foarte scazut (21 dB(A))</li>
+                  <li>Clase energetice bune (A++ / A+)</li>
+                  <li>Refrigerant ecologic R32</li>
+                  <li>Fiabilitate dovedita a brandului Daikin</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Pretul este mai ridicat decat al modelelor non-inverter</li>
+                  <li>Functiile smart (Wi-Fi) nu sunt incluse standard pe acest model</li>
+                  <li>Filtrarea aerului ar putea fi mai avansata pe modelele premium</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="gree-bora-gwh12acbxa-k6dna1a" data-review>
+            <div data-review-bar>
+              <h3>Gree Bora GWH12ACBXA-K6DNA1A</h3>
+              <span data-review-tag>Pentru Buget Mic</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 24 dB(A) interior / 53 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 792 x 291 x 201 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Gree Bora GWH12ACBXA-K6DNA1A se anunta a fi o optiune accesibila pentru cei care cauta un aparat de aer conditionat cu tehnologie inverter, fara a compromite semnificativ performanta. Cu 12000 BTU, Poate pentru a climatiza spatii de dimensiuni medii.</p><p>Cat de eficient este acest model?</p><p>Beneficiind de tehnologia inverter, acest aparat promite un consum de energie mai mic comparativ cu modelele clasice. Clasa energetica A++ la racire si A+ la incalzire sunt indicatori buni ai eficientei. Utilizarea refrigerantului R32 contribuie, la un profil mai ecologic.</p><p>Este zgomotos in functionare?</p><p>Nivelul de zgomot anuntat este de 24 dB(A) pentru unitatea interioara. Aceasta valoare este decenta pentru un aparat din segmentul de buget, insa poate fi usor mai ridicata decat la modelele premium. Pentru un dormitor, este recomandat sa se verifice si alte optiuni, poate <a href="/daikin-vs-gree-care-e-mai-bun/">Daikin vs gree care e mai bun</a>.</p><p>Ce ofera fata de un aparat non-inverter?</p><p>Avantajul principal ramane economia la factura de curent pe termen lung si confortul sporit prin mentinerea unei temperaturi constante. Functiile de baza, precum telecomanda intuitiva si modul sleep, sunt prezente. Pretul sau, in jur de 2.000 lei, il face foarte atractiv.</p><p>Ce trebuie sa iei in calcul inainte de achizitie?</p><p>Desi pretul este un mare plus, trebuie sa ai in vedere ca functiile avansate, precum conectivitatea Wi-Fi sau filtrele de aer complexe, nu sunt de obicei incluse pe acest model. durata de viata si calitatea materialelor pot fi inferioare celor de la branduri cu pretentii mai mari.</p><p>Pentru cine este recomandat Gree Bora?</p><p>Acest model este o alegere potrivita pentru cei cu un buget limitat, care doresc sa beneficieze de avantajele tehnologiei inverter. Este ideal pentru apartamente, camere de hotel sau spatii de birou mici unde aparatul nu va fi folosit non-stop la capacitate maxima.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Pret de achizitie foarte accesibil</li>
+                  <li>Tehnologie inverter pentru economie de energie</li>
+                  <li>Clase energetice decente (A++ / A+)</li>
+                  <li>Refrigerant R32</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Nivel de zgomot usor mai ridicat comparativ cu modelele premium</li>
+                  <li>Lipsesc functiile smart (Wi-Fi)</li>
+                  <li>Calitatea materialelor si a constructiei poate fi inferioara brandurilor de top</li>
+                  <li>Filtrarea aerului este standard</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="lg-dualcool-a12ft" data-review>
+            <div data-review-bar>
+              <h3>LG DualCool A12FT</h3>
+              <span data-review-tag>Eficienta Maxima</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A+++ racire / A++ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 19 dB(A) interior / 47 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter Dual</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 835 x 305 x 199 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>LG DualCool A12FT are eficienta sa energetica de top si tehnologia de compresor Dual Inverter, oferind un confort termic superior cu un consum minim de energie. Cu 12000 BTU, Poate pentru spatii de dimensiuni medii.</p><p>Ce inseamna compresorul Dual Inverter?</p><p>Compresorul Dual Inverter de la LG accelereaza procesul de racire sau incalzire si mentine temperatura dorita cu fluctuatii minime. Aceasta tehnologie permite un consum de energie cu pana la 70% mai mic decat la modelele conventionale (LG sustine aceasta cifra). nivelul de zgomot este redus la un minim de 19 dB(A), fiind printre cele mai silentioase de pe piata.</p><p>Cum se compara cu alte aparate inverter?</p><p>Clasa energetica A+++ la racire si A++ la incalzire plaseaza acest model in varful gamei in ceea ce priveste eficienta. Utilizarea refrigerantului R32 ajuta la un impact minim asupra mediului. Pretul, in jur de 2.700 lei, reflecta tehnologia avansata si performantele.</p><p>Merita functiile smart?</p><p>Acest model are conectivitate Wi-Fi, permitandu-ti sa controlezi aparatul de oriunde prin intermediul aplicatiei LG ThinQ. Poti seta programari, monitoriza consumul de energie si primi notificari direct pe telefon. Aceasta functie adauga un plus de confort si control.</p><p>Ce alte beneficii ofera?</p><p>Filtrele de aer imbunatatite, functia de autocuratare si modul de dezumidificare sunt alte avantaje. Aparatul Poate pentru a fi durabil si usor de intretinut, cu un design modern ce se integreaza bine in orice ambient.</p><p>Pentru cine este ideal LG DualCool A12FT?</p><p>Acest model este perfect pentru cei care cauta cea mai buna eficienta energetica posibila si functii smart integrate. Este o alegere excelenta pentru apartamente sau case unde aparatul va fi folosit frecvent, iar proprietarii pun pret pe economie, confort si tehnologie de ultima generatie. Daca cauti performanta top, verifica si <a href="/samsung-vs-lg-aer-conditionat-2026/">Samsung vs lg aer conditionat 2026</a>.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Eficienta energetica de top (A+++ / A++)</li>
+                  <li>Compresor Dual Inverter pentru economie si performanta</li>
+                  <li>Nivel de zgomot extrem de scazut (19 dB(A))</li>
+                  <li>Conectivitate Wi-Fi integrata</li>
+                  <li>Functii avansate de filtrare si autocuratare</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Pretul este in segmentul premium</li>
+                  <li>Instalarea poate fi mai costisitoare din cauza componentelor avansate</li>
+                  <li>Necesita o conexiune Wi-Fi stabila pentru a beneficia de functiile smart</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="mitsubishi-electric-msz-ln25vgw-muz-ln25vg-kirigamine-style" data-review>
+            <div data-review-bar>
+              <h3>Mitsubishi Electric MSZ-LN25VGW/MUZ-LN25VG (Kirigamine Style)</h3>
+              <span data-review-tag>Premium</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 9000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A+++ racire / A+++ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 19 dB(A) interior / 49 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter Hyper-Heating</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 798 x 299 x 219 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Mitsubishi Electric MSZ-LN25VGW/MUZ-LN25VG, parte a seriei Kirigamine Style, reprezinta varful de gama in materie de confort termic si eficienta energetica. Cu o capacitate de 9000 BTU, este ideal pentru dormitoare sau camere de zi de dimensiuni mai mici.</p><p>Ce aduce nou tehnologia Hyper-Heating?</p><p>Compresorul Hyper-Heating permite aparatului sa functioneze eficient chiar si la temperaturi exterioare foarte scazute, mentinand o putere de incalzire constanta. Aceasta caracteristica il face o solutie viabila pentru incalzirea locuintei pe timp de iarna, cu un consum redus. Clasa energetica A+++ atat la racire, cat si la incalzire, subliniaza eficienta sa bun.</p><p>Cat de silentios este acest aparat?</p><p>Cu un nivel de zgomot de doar 19 dB(A) pentru unitatea interioara, acest model este printre cele mai silentioase de pe piata. Este perfect pentru dormitoare, unde linistea conteaza pentru un somn odihnitor. Pretul sau, in jur de 4.500 lei, reflecta pozitionarea sa premium.</p><p>Care sunt avantajele fata de un aparat standard?</p><p>Pe langa eficienta si silentiozitate, aparatul are un sistem avansat de filtrare a aerului, inclusiv un filtru cu catehina de ceai verde si un filtru cu enzime pentru captarea bacteriilor si virusurilor. Senzorul "Mel Eye" detecteaza prezenta si pozitia persoanelor, ajustand fluxul de aer pentru a evita disconfortul.</p><p>Ce dezavantaje ar putea avea?</p><p>Principalul dezavantaj este, fara indoiala, pretul ridicat. functiile de control avansat sau conectivitatea Wi-Fi pot necesita accesorii suplimentare sau pot fi integrate in modele specifice, marind costul initial. Complexitatea sistemului poate face si intretinerea mai costisitoare.</p><p>Pentru cine Poate acest model?</p><p>Mitsubishi Electric MSZ-LN25VGW/MUZ-LN25VG este destinat celor care cauta performanta de top, cea mai buna eficienta energetica si functii avansate de purificare a aerului. Este o investitie pe termen lung pentru cei care nu fac compromisuri in ceea ce priveste confortul si calitatea aerului, fiind ideal pentru dormitoare, camere de studiu sau birouri de acasa.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Clasa energetica A+++ atat la racire, cat si la incalzire</li>
+                  <li>Compresor Hyper-Heating pentru performanta de top iarna</li>
+                  <li>Nivel de zgomot extrem de scazut (19 dB(A))</li>
+                  <li>Sistem avansat de filtrare a aerului</li>
+                  <li>Senzor "Mel Eye" pentru confort optim</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Pret de achizitie foarte ridicat</li>
+                  <li>Poate necesita accesorii suplimentare pentru conectivitate Wi-Fi</li>
+                  <li>Complexitatea sistemului poate genera costuri mai mari de intretinere</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article id="samsung-windfree-ar12txhqasineu-xeu" data-review>
+            <div data-review-bar>
+              <h3>Samsung WindFree AR12TXHQASINEU/XEU</h3>
+              <span data-review-tag>Alegerea Noastra</span>
+            </div>
+            <div data-specs>
+              <span data-spec><strong>capacitate:</strong> 12000 BTU</span>
+              <span data-spec><strong>clasa energetica:</strong> A++ racire / A+ incalzire</span>
+              <span data-spec><strong>nivel zgomot:</strong> 19 dB(A) interior / 45 dB(A) exterior</span>
+              <span data-spec><strong>compresor:</strong> Inverter</span>
+              <span data-spec><strong>refrigerant:</strong> R32</span>
+              <span data-spec><strong>dimensiuni:</strong> 857 x 299 x 207 mm (unitate interioara)</span>
+            </div>
+            <div data-review-body>
+              <p>Samsung WindFree AR12TXHQASINEU/XEU ofera o experienta de climatizare unica, eliminand curentii de aer rece directi prin tehnologia WindFree. Cu 12000 BTU, este potrivit pentru apartamente si case de dimensiuni medii.</p><p>Ce inseamna tehnologia WindFree?</p><p>In loc sa sufle aer rece direct, modul WindFree disperseaza aerul prin 21.000 de micro-orificii, creand un flux de aer "cald si bland" (still air). Acest lucru previne senzatia de raceala neplacuta si mentine o temperatura confortabila. Aparatul dispune si de functie de racire rapida (Fast Cooling) cand este necesara o ajustare rapida a temperaturii.</p><p>Cum se compara cu alte modele inverter?</p><p>Clasa energetica A++ la racire si A+ la incalzire sunt standard pentru tehnologia inverter. Compresorul digital inverter asigura un consum optim de energie, iar refrigerantul R32 este ecologic. Pretul sau, in jur de 2.600 lei, il plaseaza in segmentul mid-range superior, justificat de tehnologia unica.</p><p>Merita functiile smart?</p><p>Acest model include conectivitate Wi-Fi, permitand controlul prin aplicatia SmartThings. Poti monitoriza consumul de energie, seta programari si controla aparatul de la distanta. Functia AI Auto Comfort invata preferintele utilizatorului si ajusteaza automat setarile.</p><p>Ce alte caracteristici sunt importante?</p><p>Modul "Good Sleep" optimizeaza temperatura si umiditatea pentru un somn confortabil. Functia de autocuratare previne formarea bacteriilor si a mucegaiului in unitatea interioara. Nivelul de zgomot de 19 dB(A) in modul WindFree este deosebit de redus.</p><p>Pentru cine este recomandat Samsung WindFree?</p><p>Acest aparat este ideal pentru persoanele sensibile la curentii de aer rece, familiile cu copii sau oricine cauta un confort sporit in locuinta. Combina eficienta energetica, functii smart si o tehnologie unica de climatizare "fara curenti de aer". Este o alegere echilibrata intre pret, performanta si inovatie.</p>
+            </div>
+            <div data-pcwrap>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Avantaje</h4>
+                <ul data-pros>
+                <li>Tehnologie WindFree unica pentru confort sporit</li>
+                  <li>Nivel de zgomot foarte scazut (19 dB(A))</li>
+                  <li>Conectivitate Wi-Fi si functii smart (AI Auto Comfort)</li>
+                  <li>Eficienta energetica buna (A++ / A+)</li>
+                  <li>Functie de autocuratare si mod "Good Sleep"</li>
+                </ul>
+              </div>
+              <div>
+                <h4 style="font-size:.85rem;margin-bottom:8px;color:var(--c-navy)">Dezavantaje</h4>
+                <ul data-cons>
+                <li>Pretul este in segmentul mediu-superior</li>
+                  <li>Modul WindFree poate necesita o perioada de acomodare</li>
+                  <li>Eficienta in mod "racire rapida" poate fi mai scazuta</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          
+          <section id="comparatie">
+            <h2>Aer conditionat inverter vs non inverter: Diferente cheie</h2>
+            <div data-comparison>
+              <table>
+                <thead><tr><th>Model</th><th>Capacitate</th><th>Clasa energetica</th><th>Zgomot</th><th>Pret</th><th>Potrivit pentru</th></tr></thead>
+                <tbody>
+              <tr><td>Inverter (ex: Daikin Sensira)</td><td>12000 BTU</td><td>A++ / A+</td><td>21 dB(A)</td><td>~2800 lei</td><td>Utilizare frecventa, economie energie</td></tr>
+              <tr><td>Non-Inverter (model generic)</td><td>12000 BTU</td><td>A / A</td><td>30-35 dB(A)</td><td>~1800 lei</td><td>Utilizare ocazionala, buget redus</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          
+          <section id="ghid">
+            <h2>Cum alegi intre aer conditionat inverter si non inverter?</h2>
+            <div data-guide>
+              <p>Alegerea intre un aparat de aer conditionat cu tehnologie inverter si unul non-inverter depinde de mai multi factori. Intelegerea acestor diferente te va ajuta sa faci cea mai buna investitie pentru confortul tau.</p><h4>Ce inseamna inverter?</h4><p>Un aparat cu tehnologie inverter nu opreste si porneste compresorul brusc. In loc sa lucreze la capacitate maxima si apoi sa se opreasca, compresorul inverter isi ajusteaza turatia. Acest lucru mentine temperatura constanta, reduce consumul de energie cu pana la 40% si prelungeste durata de viata a componentelor.</p><h4>Cand e potrivit un aparat non-inverter?</h4><p>Aparatele non-inverter, cunoscute si ca "on-off", functioneaza la capacitate maxima pana cand temperatura dorita este atinsa, apoi se opresc. Cand temperatura creste sau scade, ciclul reincepe. Acestea sunt mai ieftine la achizitie, dar consuma mai mult curent si pot genera fluctuatii de temperatura mai mari. Sunt o optiune daca folosesti aparatul rar, doar pentru perioade scurte, sau daca bugetul initial este foarte limitat.</p><h4>Ce factori sa iei in calcul?</h4><ul><li><strong>Utilizare:</strong> Daca vei folosi aparatul zilnic, pe perioade lungi (vara si iarna), tehnologia inverter este mult mai eficienta pe termen lung. Pentru utilizare ocazionala, un aparat non-inverter ar putea fi suficient.</li><li><strong>Buget:</strong> Aparatele inverter au un pret de achizitie mai mare, dar economiile la factura de curent pe parcursul anilor pot compensa diferenta. Un aparat non-inverter este mai ieftin initial.</li><li><strong>Confort termic:</strong> Aparatele inverter mentin o temperatura mult mai constanta, fara fluctuatii mari. Cele non-inverter pot crea senzatii de prea cald sau prea frig.</li><li><strong>Zgomot:</strong> De regula, aparatele inverter sunt mai silentioase, deoarece compresorul nu reporneste la capacitate maxima.</li><li><strong>Durata de viata:</strong> Componentele unui aparat inverter sunt supuse unui stres mai mic, ceea ce poate duce la o durata de viata mai lunga.</li></ul><h4>Greseli de evitat</h4><p>Nu alege un aparat doar pe baza pretului initial. Calculeaza costurile pe termen lung. Asigura-te ca alegi capacitatea potrivita (BTU) pentru suprafata incaperii. Un aparat subdimensionat va functiona constant la capacitate maxima, crescand consumul, iar unul supradimensionat va porni si se va opri des, fara a eficientiza consumul.</p><p>Investitia intr-un aparat de aer conditionat cu tehnologie inverter este, de cele mai multe ori, cea mai buna decizie pentru confortul si bugetul tau pe termen lung. Verifica si comparatiile <a href="/gree-vs-midea-aer-conditionat/">Gree vs midea aer conditionat</a> sau <a href="/vivax-vs-vortex-aer-conditionat/">Vivax vs vortex aer conditionat</a> pentru a vedea ce ofera piata.</p>
+            </div>
+          </section>
+
+          <div data-faq>
+            <h2>Intrebari frecvente</h2>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Aer conditionat inverter sau non inverter, ce consuma mai putin?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Aerul conditionat cu tehnologie inverter consuma semnificativ mai putin curent, cu pana la 40% mai putin decat un aparat non-inverter. Acest lucru se datoreaza modului in care compresorul isi ajusteaza turatia pentru a mentine temperatura dorita, evitand ciclurile de pornire/oprire.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Cat costa un aer conditionat inverter bun?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Un aparat de aer conditionat inverter bun, cu o capacitate de 12000 BTU, costa in Romania in 2026 intre 2.000 si 4.500 lei. Modelele premium cu functii avansate pot depasi aceasta suma.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Care e diferenta principala intre inverter si non inverter?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Diferenta principala sta in modul de functionare al compresorului. Inverterul isi regleaza turatia continuu, mentinand temperatura constanta si economisind energie. Non-inverterul functioneaza la capacitate maxima sau este oprit, generand fluctuatii termice si un consum mai mare.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Am nevoie de inverter daca folosesc aerul conditionat doar ocazional?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Daca folosesti aparatul doar ocazional, pentru perioade scurte de timp (cateva ore pe saptamana), un aparat non-inverter ar putea fi suficient si mai avantajos din punct de vedere al costului initial. Pentru utilizare frecventa, inverterul este recomandat.
+                </div>
+              </div>
+              
+              <div data-faq-item>
+                <button data-faq-q onclick="this.parentElement.classList.toggle('is-open')">
+                  Ce se intampla daca aleg un aparat non-inverter si am o camera mare?
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div data-faq-a>
+                  Daca alegi un aparat non-inverter pentru o camera mare, acesta va consuma foarte mult curent incercand sa atinga si sa mentina temperatura dorita. De asemenea, vei resimti fluctuatii de temperatura mai mari si confortul va fi diminuat.
+                </div>
+              </div>
+          </div>
+
+          <PrevNextNav currentSlug="aer-conditionat-inverter-vs-non-inverter" />
+
+        </div>
+      </div>
+    </div>
+
+    <SimilarArticles
+      currentSlug="aer-conditionat-inverter-vs-non-inverter"
+      category="Comparatii Modele"
+      categorySlug="comparatii-modele"
+    />
+  </article>
+
+  <script>
+    // Table scroll detection
+    (function() {
+      const outer = document.querySelector('[data-table-wrap]');
+      if (!outer) return;
+      const scroll = outer.querySelector('[data-table-scroll]');
+      function check() {
+        if (scroll.scrollWidth > scroll.clientWidth) {
+          outer.classList.add('can-scroll');
+        } else {
+          outer.classList.remove('can-scroll');
+        }
+        if (scroll.scrollLeft + scroll.clientWidth >= scroll.scrollWidth - 2) {
+          outer.classList.remove('can-scroll');
+        }
+      }
+      check();
+      scroll.addEventListener('scroll', check);
+      window.addEventListener('resize', check);
+    })();
+
+    // Outline tracking
+    (function() {
+      const links = document.querySelectorAll('#sideOutline a, #mobileOutline a');
+      const secs = [];
+      links.forEach(link => {
+        const id = link.getAttribute('href')?.replace('#', '');
+        const el = id && document.getElementById(id);
+        if (el) secs.push({ el, link });
+      });
+      if (!secs.length) return;
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const m = secs.find(s => s.el === entry.target);
+          if (m && entry.isIntersecting) {
+            links.forEach(l => l.parentElement?.classList.remove('is-active'));
+            m.link.parentElement?.classList.add('is-active');
+            links.forEach(l => {
+              if (l !== m.link && l.getAttribute('href') === m.link.getAttribute('href')) {
+                l.parentElement?.classList.add('is-active');
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-72px 0px -60% 0px' });
+      secs.forEach(s => obs.observe(s.el));
+    })();
+  </script>
+</Layout>
