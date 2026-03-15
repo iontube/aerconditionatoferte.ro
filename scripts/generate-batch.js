@@ -29,28 +29,7 @@ try {
 } catch (e) {}
 
 // ========== CONFIG ==========
-const GEMINI_API_KEYS = [
-  'AIzaSyAbRzbs0WRJMb0gcojgyJlrjqOPr3o2Cmk',
-  'AIzaSyDZ2TklBMM8TU3FA6aIS8vdUc-2iMyHWaM',
-  'AIzaSyBdmChQ0ARDdDAqSMSlDIit_xz5ucrWjkY',
-  'AIzaSyAE57AIwobFO4byKbeoa-tVDMV5lMgcAxQ',
-  'AIzaSyBskPrKeQvxit_Rmm8PG_NO0ZhMQsrktTE',
-  'AIzaSyAkUcQ3YiD9cFiwNh8pkmKVxVFxEKFJl2Q',
-  'AIzaSyDnX940N-U-Sa0202-v3_TOjXf42XzoNxE',
-  'AIzaSyAMl3ueRPwzT1CklxkylmTXzXkFd0A_MqI',
-  'AIzaSyA82h-eIBvHWvaYLoP26zMWI_YqwT78OaI',
-  'AIzaSyBRI7pd1H2EdCoBunJkteKaCDSH3vfqKUg',
-  'AIzaSyA3IuLmRWyTtygsRJYyzHHvSiTPii-4Dbk',
-  'AIzaSyB6RHadv3m1WWTFKb_rB9ev_r4r2fM9fNU',
-  'AIzaSyCexyfNhzT2py3FLo3sXftqKh0KUdAT--A',
-  'AIzaSyC_SN_RdQ2iXzgpqng5Byr-GU5KC5npiAE',
-  'AIzaSyBOV9a_TmVAayjpWemkQNGtcEf_QuiXMG0',
-  'AIzaSyCFOafntdykM82jJ8ILUqY2l97gdOmwiGg',
-  'AIzaSyACxFhgs3tzeeI5cFzrlKmO2jW0l8poPN4',
-  'AIzaSyBhZXBhPJCv9x8jKQljZCS4b5bwF3Ip3pk',
-  'AIzaSyDF7_-_lXcAKF81SYpcD-NiA5At4Bi8tp8',
-  'AIzaSyAwinD7oQiQnXeB2I5kyQsq_hEyJGhSrNg',
-];
+const GEMINI_API_KEYS = (process.env.GEMINI_API_KEYS || '').split(',').filter(Boolean);
 
 const CF_ACCOUNT_ID = process.env.CF_ACCOUNT_ID;
 const CF_API_TOKEN = process.env.CLOUDFLARE_API_TOKEN;
